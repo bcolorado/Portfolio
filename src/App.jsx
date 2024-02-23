@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme, wrapperStyle } from "./utils/Themes";
+import { Navbar, HeroSection, Education, Skills } from "./components";
+import { BrowserRouter as Router } from "react-router-dom";
+
+const Body = styled.div`
+  background-color: ${darkTheme.bg};
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+`;
+
+const Wrapper = styled.div`
+  background: ${wrapperStyle.bg};
+  width: 100%;
+  clip-path: ${wrapperStyle.clipPath};
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={darkTheme}>
+      <Router>
+        <Navbar />
+        <Body>
+          <HeroSection />
+          <Wrapper>
+            <Skills />
+            <Education />
+          </Wrapper>
+        </Body>
+      </Router>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
