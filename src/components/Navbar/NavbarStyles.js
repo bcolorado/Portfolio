@@ -1,12 +1,8 @@
-import React from "react";
-import { darkTheme } from "../utils/Themes";
+import { darkTheme } from "../../utils/Themes";
 import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
-import { FaLessThan, FaGreaterThan  } from "react-icons/fa";
-import { RxSlash } from "react-icons/rx";
 
-
-const Nav = styled.nav`
+export const Nav = styled.nav`
   background-color: ${darkTheme.card_light};
   height: 80px;
   display: flex;
@@ -21,7 +17,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavContainer = styled.div`
+export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   heigth: 60px;
@@ -31,22 +27,22 @@ const NavContainer = styled.div`
   max-width: 1300px;
 `;
 
-const NavLogo = styled(LinkR)`
+export const NavLogo = styled(LinkR)`
   color: ${darkTheme.primary};
-  width:80%;
-  display:flex;
-  padding:0 6px;
+  width: 80%;
+  display: flex;
+  padding: 0 6px;
   justify-self: flex-start;
-  cursor:pointer;
-  text-decoration:none;
-  
+  cursor: pointer;
+  text-decoration: none;
+
   align-items: center;
-  @media screen and (max-width: 640px){
+  @media screen and (max-width: 640px) {
     padding: 0 0px;
   }
 `;
 
-const MobileIcon = styled.div`
+export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
@@ -60,7 +56,7 @@ const MobileIcon = styled.div`
   }
 `;
 
-const NavItems = styled.ul`
+export const NavItems = styled.ul`
   width: 100%;
   display: flex;
   align-items: center;
@@ -72,7 +68,7 @@ const NavItems = styled.ul`
   }
 `;
 
-const NavLink = styled.a`
+export const NavLink = styled.a`
   color: ${darkTheme.text_primary};
   font-weight: 500;
   cursor: pointer;
@@ -83,7 +79,7 @@ const NavLink = styled.a`
   }
 `;
 
-const ButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
   width: 80%;
   height: 100%;
   display: flex;
@@ -95,7 +91,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const GithubButton = styled.a`
+export const GithubButton = styled.a`
   border: 1px solid ${darkTheme.primary};
   color: ${darkTheme.primary};
   justify-content: center;
@@ -114,7 +110,7 @@ const GithubButton = styled.a`
   }
 `;
 
-const Span = styled.span`
+export const Span = styled.span`
   padding: 0 4px;
   font-weight: bold;
   font-size: 18px;
@@ -122,30 +118,33 @@ const Span = styled.span`
   color: ${darkTheme.text_primary};
 `;
 
-export const Navbar = () => {
-  return (
-    <Nav>
-      <NavContainer>
-        <NavLogo to="/">
-          <FaLessThan size="1rem"/>
-          <Span>Bryan</Span>
-          <Span>Smith</Span>
-          <RxSlash size="1.5rem"/>
-          <FaGreaterThan size="1rem"/>
-        </NavLogo>
-        <MobileIcon></MobileIcon>
+export const MobileMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:16px;
+  position: absolute;
+  top:80px;
+  right:0;
+  width: 100%;
+  padding: 12px 40px 24px 40px;
+  background; ${darkTheme.card_light};
+  transition: all 0.3s ease-in-out;
+  transform : ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.3);
+  opacity: ${({ open }) => (open ? "1" : "0")};
+  z-index: ${({ open }) => (open ? "1" : "-1")};
+  `;
 
-        <NavItems>
-          <NavLink href="#inicio">Inicio</NavLink>
-          <NavLink href="#habilidades">Habilidades</NavLink>
-          <NavLink href="#experiencia">Experiencia</NavLink>
-          <NavLink href="#proyectos">Proyectos</NavLink>
-          <NavLink href="#educación">Educación</NavLink>
-        </NavItems>
-        <ButtonContainer>
-          <GithubButton>Github Profile</GithubButton>
-        </ButtonContainer>
-      </NavContainer>
-    </Nav>
-  );
-};
+  export const MobileMenuLink = styled.a`
+  color: ${darkTheme.text_primary};
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: ${darkTheme.primary};
+  }
+`;
+
