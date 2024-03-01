@@ -32,12 +32,10 @@ export const NavLogo = styled(LinkR)`
   width: 80%;
   display: flex;
   padding: 0 6px;
-  justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
-
   align-items: center;
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
     padding: 0 0px;
   }
 `;
@@ -53,6 +51,10 @@ export const MobileIcon = styled.div`
     font-size: 1.8rem;
     cursor: pointer;
     color: ${darkTheme.text_primary};
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: ${darkTheme.primary};
+    }
   }
 `;
 
@@ -76,6 +78,7 @@ export const NavLink = styled.a`
   transition: all 0.3s ease-in-out;
   &:hover {
     color: ${darkTheme.primary};
+    transform: translateY(-3px);
   }
 `;
 
@@ -85,7 +88,8 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 0 6px;
+  padding: 0 10px;
+  text-align: center;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -102,11 +106,33 @@ export const GithubButton = styled.a`
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 500;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.4s ease-in-out;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+
   &:hover {
-    background: ${darkTheme.primary};
     color: ${darkTheme.text_primary};
+  }
+
+  &::after {
+    content: "";
+    background: ${darkTheme.primary}; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.4s ease;
+  }
+
+  &:hover::after {
+    transition: all 0.4s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
   }
 `;
 
@@ -122,22 +148,25 @@ export const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap:16px;
+  gap: 16px;
   position: absolute;
-  top:80px;
-  right:0;
+  top: 80px;
+  right: 0;
   width: 100%;
   padding: 12px 40px 24px 40px;
-  background; ${darkTheme.card_light};
+  background: ${darkTheme.card_light};
   transition: all 0.3s ease-in-out;
-  transform : ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   border-radius: 0 0 20px 20px;
-  box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.3);
-  opacity: ${({ open }) => (open ? "1" : "0")};
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  opacity: ${({ open }) => (open ? "0.95" : "0")};
   z-index: ${({ open }) => (open ? "1" : "-1")};
-  `;
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
 
-  export const MobileMenuLink = styled.a`
+export const MobileMenuLink = styled.a`
   color: ${darkTheme.text_primary};
   font-weight: 500;
   cursor: pointer;
@@ -147,4 +176,3 @@ export const MobileMenu = styled.div`
     color: ${darkTheme.primary};
   }
 `;
-
