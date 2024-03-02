@@ -4,21 +4,28 @@ import { darkTheme } from "../../utils/Themes";
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
 import picture from "../../assets/portfolioPic.jpg";
+import HeroBgAnimation from "../HeroBgAnimation";
 import "./btnStyles.css";
 
 const HeroContainer = styled.div`
   display: flex;
-  background-color: ${darkTheme.card_light}; 
+  background-color: ${darkTheme.card_light};
   justify-content: center;
   position: relative;
   padding: 80px 30px;
-  @media screen and (max-width: 960px) {padding: 66px 16px;}
-  @media screen and (max-width: 640px) {padding: 32px 16px;}
+
+  @media screen and (max-width: 960px) {
+    padding: 66px 16px;
+  }
+  @media screen and (max-width: 640px) {
+    padding: 32px 16px;
+  }
   z-index: 1;
-  clip-path: clipPath: "polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%)"
-`;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+  `;
 
 const HeroBg = styled.div`
+  opacity: 0.5;
   position: absolute;
   display: flex;
   justify-content: end;
@@ -27,18 +34,17 @@ const HeroBg = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
   max-width: 1250px;
   overflow: hidden;
   padding: 0 30px;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-39%) translateY(-50%);
 
   @media (max-width: 960px) {
-    justify-content: center;
-    padding: 0 0px;
+    display: none;
   }
 `;
 
@@ -152,9 +158,9 @@ const Img = styled.img`
   max-height: 450px;
   border-radius: 50%;
 
-  box-shadow: -1px 1px 19px 7px rgba(230, 76, 76, 1);
-  -webkit-box-shadow: -1px 1px 19px 7px rgba(230, 76, 76, 1);
-  -moz-box-shadow: -1px 1px 19px 7px rgba(230, 76, 76, 1);
+  box-shadow: -1px 1px 19px 1px rgba(230, 76, 76, 1);
+  -webkit-box-shadow: -1px 1px 19px 1px rgba(230, 76, 76, 1);
+  -moz-box-shadow: -1px 1px 19px 1px rgba(230, 76, 76, 1);
   object-fit: cover;
   object-position: center;
   @media (max-width: 960px) {
@@ -172,7 +178,9 @@ export const HeroSection = () => {
   return (
     <div id="about">
       <HeroContainer>
-        <HeroBg></HeroBg>
+        <HeroBg>
+          <HeroBgAnimation />
+        </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
             <Title>

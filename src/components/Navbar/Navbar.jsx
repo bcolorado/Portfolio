@@ -6,7 +6,6 @@ import { RxSlash } from "react-icons/rx";
 import { NavMobileMenu } from "./NavMobileMenu";
 import { Bio } from "../../data/constants";
 
-
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
@@ -32,10 +31,12 @@ export const Navbar = () => {
           <NavLink href="#educación">Educación</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GithubButton  href={Bio.github}
-              target={"_blank"}
-              rel="noopener noreferrer">
-          <FaGithub size="1.5rem"/>
+          <GithubButton
+            href={Bio.github}
+            target={"_blank"}
+            rel="noopener noreferrer"
+          >
+            <FaGithub size="1.5rem" />
             Github
           </GithubButton>
         </ButtonContainer>
