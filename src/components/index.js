@@ -1,4 +1,4 @@
 export * from "./Navbar/Navbar";
-export * from "./HeroSection";
+export * from "./HeroSection/HeroSection";
 export * from "./Skills";
 export * from "./Education";

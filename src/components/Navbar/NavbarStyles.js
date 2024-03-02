@@ -42,7 +42,7 @@ export const NavLogo = styled(LinkR)`
 
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 960px) {
     display: block;
     position: absolute;
     top: 0;
@@ -65,7 +65,7 @@ export const NavItems = styled.ul`
   justify-content: center;
   list-style: none;
   gap: 32px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 `;
@@ -78,7 +78,7 @@ export const NavLink = styled.a`
   transition: all 0.3s ease-in-out;
   &:hover {
     color: ${darkTheme.primary};
-    transform: translateY(-3px);
+    transform: translateY(-5px);
   }
 `;
 
@@ -90,7 +90,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   padding: 0 10px;
   text-align: center;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 `;
@@ -110,6 +110,7 @@ export const GithubButton = styled.a`
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  gap: 10px;
 
   &:hover {
     color: ${darkTheme.text_primary};
@@ -148,7 +149,7 @@ export const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   position: absolute;
   top: 80px;
   right: 0;
@@ -161,7 +162,7 @@ export const MobileMenu = styled.div`
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   opacity: ${({ open }) => (open ? "0.95" : "0")};
   z-index: ${({ open }) => (open ? "1" : "-1")};
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 960px) {
     display: none;
   }
 `;

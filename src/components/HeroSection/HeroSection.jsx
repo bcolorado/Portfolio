@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { darkTheme } from "../utils/Themes";
-import { Bio } from "../data/constants";
+import { darkTheme } from "../../utils/Themes";
+import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
+import picture from "../../assets/portfolioPic.jpg";
+import "./btnStyles.css";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -116,7 +118,7 @@ const TextLoop = styled.div`
     text-align: center;
   }
   @media screen and (max-width: 640px) {
-    font-size: 22px;
+    font-size: 26px;
     line-height: 48px;
     margin-bottom: 16px;
   }
@@ -141,24 +143,28 @@ const Subtitle = styled.div`
     font-size: 22px;
   }
 `;
-const ResumeButton = styled.div`
-  width: 95%;
-  max-width: 300px;
-  text-align: center;
-  padding: 16px 0;
-  color: ${darkTheme.white};
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 600;
-  transition: all 0.2s ease-in-out !important;
-  background: linear-gradient(145deg, #e64c4c, #0046d1b3);
-  box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
-  &:hover {
-    font-size: 22px;
-    width: 100%;
-    max-width: 320px;
-    padding: 18px 0;
+
+const Img = styled.img`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: 450px;
+  border-radius: 50%;
+
+  box-shadow: -1px 1px 19px 7px rgba(230, 76, 76, 1);
+  -webkit-box-shadow: -1px 1px 19px 7px rgba(230, 76, 76, 1);
+  -moz-box-shadow: -1px 1px 19px 7px rgba(230, 76, 76, 1);
+  object-fit: cover;
+  object-position: center;
+  @media (max-width: 960px) {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 280px;
+    max-height: 280px;
   }
 `;
 
@@ -170,7 +176,7 @@ export const HeroSection = () => {
         <HeroInnerContainer>
           <HeroLeftContainer>
             <Title>
-              Hola, mi nombre es
+              Mi nombre es
               <br />
               {Bio.name}
             </Title>
@@ -187,11 +193,18 @@ export const HeroSection = () => {
               </Span>
             </TextLoop>
             <Subtitle>{Bio.description}</Subtitle>
-            <ResumeButton href={Bio.resume} target="_blank">
+            <a
+              className="btn"
+              href={Bio.resume}
+              target={"_blank"}
+              rel="noopener noreferrer"
+            >
               Ver CV
-            </ResumeButton>
+            </a>
           </HeroLeftContainer>
-          <HeroRightContainer></HeroRightContainer>
+          <HeroRightContainer>
+            <Img src={picture} alt="Picture" />
+          </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
     </div>
