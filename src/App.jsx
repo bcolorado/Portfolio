@@ -1,7 +1,7 @@
 import "./App.css";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, wrapperStyle } from "./utils/Themes";
-import { Navbar, HeroSection, Education, Skills } from "./components";
+import { Navbar, HeroSection, Education, Skills, Experience } from "./components";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const Body = styled.div`
@@ -26,6 +26,7 @@ function App() {
           <HeroSection />
           <Wrapper>
             <Skills />
+            <Experience/>
             <Education />
           </Wrapper>
         </Body>

@@ -158,9 +158,9 @@ const Img = styled.img`
   max-height: 450px;
   border-radius: 50%;
 
-  box-shadow: -1px 1px 19px 1px rgba(230, 76, 76, 1);
-  -webkit-box-shadow: -1px 1px 19px 1px rgba(230, 76, 76, 1);
-  -moz-box-shadow: -1px 1px 19px 1px rgba(230, 76, 76, 1);
+  box-shadow: -1px 1px 10px 1px rgba(230, 76, 76, 1);
+  -webkit-box-shadow: -1px 1px 10px 1px rgba(230, 76, 76, 1);
+  -moz-box-shadow: -1px 1px 10px 1px rgba(230, 76, 76, 1);
   object-fit: cover;
   object-position: center;
   @media (max-width: 960px) {

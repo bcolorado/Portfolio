@@ -1,3 +1,6 @@
+import img1 from '../assets/ExperiencePic/lab101_unal_logo.jpg'
+import img2 from '../assets/ExperiencePic/sitlen.png'
+
 export const Bio = {
   name: "Bryan Smith",
   roles: ["Ingeniero de Sistemas", "Desarrollador de software"],
@@ -101,4 +104,37 @@ export const skills = [
       },
     ],
   },
+];
+
+export const experiences = [
+  {
+    id: 0,
+    img: img1,
+    role: "Desarrollador FrontEnd",
+    company: "LAB101 UNAL",
+    date: "Noviembre 2023 - Actualidad",
+    desc: "Trabajando en el desarrollo de las interfaces gráficas de usuario para proyectos web usando React y Chakra.",
+    skills: [
+      "React",
+      "Chakra",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+  },
+
+  {
+    id: 1,
+    img: img2,
+    role: "Desarrollador Backend",
+    company: "Sitlen",
+    date: "Agosto 2023 - Actualidad",
+    desc: "Trabajando en el backend de la plataforma Sitlen, respaldando la creación y mejora continua de servicios esenciales para el proyecto.",
+    skills: [
+      "JavaScript",
+      "ExpressJs",
+      "Firebase",
+    ],
+  },
+  
 ];

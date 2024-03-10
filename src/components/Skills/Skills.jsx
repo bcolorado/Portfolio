@@ -36,17 +36,18 @@ const Title = styled.div`
   color: ${darkTheme.text_primary};
   @media (max-width: 960px) {
     margin-top: 12px;
-    font-size: 32px;
+    font-size: 44px;
   }
 `;
 
 const Description = styled.div`
   font-size: 24px;
   text-align: center;
-  font-weight: 600;
+  padding-left: 20px; /* Padding izquierdo */
+  padding-right: 20px; /* Padding derecho */
   color: ${darkTheme.text_primary + 95};
-  @media (max-width: 960px) {
-    font-size: 16px;
+  @media (max-width: 640px) {
+    font-size: 22px;
   }
 `;
 
@@ -63,8 +64,9 @@ const Skill = styled.div`
   width: 100%;
   max-width: 500px;
   background-color: rgba(17, 25, 40, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Sombra tenue */
+
   border-radius: 16px;
   padding: 18px 36px;
 
