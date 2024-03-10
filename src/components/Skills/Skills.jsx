@@ -2,7 +2,7 @@ import React from "react";
 import { skills } from "../../data/constants";
 import styled from "styled-components";
 import { darkTheme } from "../../utils/Themes";
-import {Icon} from "./Icon";
+import { Icon } from "./Icon";
 // import logo from "../../assets/Icons/react.svg";
 
 const Container = styled.div`
@@ -41,10 +41,10 @@ const Title = styled.div`
 `;
 
 const Description = styled.div`
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
   font-weight: 600;
-  color: ${darkTheme.text_secondary};
+  color: ${darkTheme.text_primary + 95};
   @media (max-width: 960px) {
     font-size: 16px;
   }
@@ -91,7 +91,7 @@ const SkillList = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 15px;
   margin-bottom: 20px;
 `;
 const SkillItem = styled.div`
@@ -120,10 +120,11 @@ export const Skills = () => {
   return (
     <Container id="skills">
       <Wrapper>
-        <Title>Skills</Title>
+        <Title>Habilidades</Title>
+
         <Description>
-          Here are some of my skills on which I have been working on for the
-          past 3 years.
+          Estás son algunas de las habilidades que he adquirido a lo largo de mi
+          carrera profesional:
         </Description>
 
         <SkillsContainer>
