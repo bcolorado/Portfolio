@@ -98,7 +98,7 @@ export const Projects = ({ openModal, setOpenModal }) => {
   return (
     <Container id="Projects">
       <Wrapper>
-        <Title>Proyectos</Title>
+        <Title>Proyectos, insignias y certificados</Title>
         <Desc
           style={{
             marginBottom: "40px",

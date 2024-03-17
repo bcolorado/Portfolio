@@ -1,16 +1,10 @@
 import "./App.css";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, wrapperStyle } from "./utils/Themes";
-import {
-  Navbar,
-  HeroSection,
-  Education,
-  Skills,
-  Experience,
-  Projects,
-} from "./components";
+import {Navbar,HeroSection,Education,Skills,Experience,Projects,} from "./components";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
+import { ProjectDetails } from "./components/Dialog/ProjectDetails";
 
 const Body = styled.div`
   background-color: ${darkTheme.bg};
@@ -38,7 +32,10 @@ function App() {
             <Experience />
             {/* <Education /> */}
           </Wrapper>
-          <Projects openModal={openModal} setOpenModal={setOpenModal}/>
+          <Projects openModal={openModal} setOpenModal={setOpenModal} />
+          {openModal.state && (
+            <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
+          )}
         </Body>
       </Router>
     </ThemeProvider>
