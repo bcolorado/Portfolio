@@ -1,5 +1,5 @@
-import img1 from '../assets/ExperiencePic/lab101_unal_logo.jpg'
-import img2 from '../assets/ExperiencePic/sitlen.png'
+import img1 from "../assets/ExperiencePic/lab101_unal_logo.jpg";
+import img2 from "../assets/ExperiencePic/sitlen.png";
 
 export const Bio = {
   name: "Bryan Smith",
@@ -114,13 +114,7 @@ export const experiences = [
     company: "LAB101 UNAL",
     date: "Noviembre 2023 - Actualidad",
     desc: "Trabajando en el desarrollo de las interfaces gráficas de usuario para proyectos web usando React y Chakra.",
-    skills: [
-      "React",
-      "Chakra",
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
+    skills: ["React", "Chakra", "HTML", "CSS", "JavaScript"],
   },
 
   {
@@ -130,11 +124,45 @@ export const experiences = [
     company: "Sitlen",
     date: "Agosto 2023 - Actualidad",
     desc: "Trabajando en el backend de la plataforma Sitlen, respaldando la creación y mejora continua de servicios esenciales para el proyecto.",
-    skills: [
-      "JavaScript",
-      "ExpressJs",
-      "Firebase",
-    ],
+    skills: ["JavaScript", "ExpressJs", "Firebase"],
   },
-  
+];
+
+export const projects = [
+  {
+    id: 0,
+    title: "Test front",
+    date: "Jun 2023 - Jul 2023",
+    description: "This is a placeholder",
+    image:
+      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+    tags: ["Docker", "AWS", "JavaScript"],
+    category: "front",
+    github: "https://github.com/bcolorado",
+    webapp: "https://www.google.com/",
+  },
+  {
+    id: 1,
+    title: "Test back",
+    date: "Jun 2023 - Jul 2023",
+    description: "This is a placeholder",
+    image:
+      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+    tags: ["Docker", "AWS", "JavaScript"],
+    category: "back",
+    github: "https://github.com/bcolorado",
+    webapp: "https://www.google.com/",
+  },
+  {
+    id: 1,
+    title: "Test arch",
+    date: "Jun 2023 - Jul 2023",
+    description: "This is a placeholder",
+    image:
+      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+    tags: ["Docker", "AWS", "JavaScript"],
+    category: "arch",
+    github: "https://github.com/bcolorado",
+    webapp: "https://www.google.com/",
+  },
 ];
