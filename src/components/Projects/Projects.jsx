@@ -139,8 +139,9 @@ export const Projects = ({ openModal, setOpenModal }) => {
         </ToggleGroup>
         <CardContainer>
           {toggle === "all" &&
-            projects.map((project) => (
+            projects.map((project, index) => (
               <ProjectCard
+                key={`project-${index}`}
                 project={project}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
@@ -148,8 +149,9 @@ export const Projects = ({ openModal, setOpenModal }) => {
             ))}
           {projects
             .filter((item) => item.category === toggle)
-            .map((project) => (
+            .map((project, index) => (
               <ProjectCard
+                key={`project-${index}`}
                 project={project}
                 openModal={openModal}
                 setOpenModal={setOpenModal}

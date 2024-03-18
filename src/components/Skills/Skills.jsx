@@ -65,7 +65,7 @@ const Skill = styled.div`
   max-width: 500px;
   background-color: rgba(17, 25, 40, 0.83);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Sombra tenue */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 
   border-radius: 16px;
   padding: 18px 36px;

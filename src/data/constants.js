@@ -1,5 +1,5 @@
 import img1 from "../assets/ExperiencePic/lab101_unal_logo.jpg";
-import img2 from "../assets/ExperiencePic/sitlen.png";
+import img2 from "../assets/ExperiencePic/sitlen.jpg";
 
 export const Bio = {
   name: "Bryan Smith",

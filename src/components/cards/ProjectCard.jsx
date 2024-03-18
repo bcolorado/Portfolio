@@ -110,7 +110,7 @@ export const ProjectCard = ({ project, setOpenModal }) => {
       <Image src={project.image} />
       <Tags>
         {project.tags?.map((tag, index) => (
-          <Tag>{tag}</Tag>
+          <Tag key={`projectCardTag-${index}`}>{tag}</Tag>
         ))}
       </Tags>
       <Details>
@@ -120,7 +120,7 @@ export const ProjectCard = ({ project, setOpenModal }) => {
       </Details>
       <Members>
         {project.member?.map((member) => (
-          <Avatar src={member.img} />
+          <Avatar key={`projectCardMember-${index}`} src={member.img} />
         ))}
       </Members>
     </Card>
