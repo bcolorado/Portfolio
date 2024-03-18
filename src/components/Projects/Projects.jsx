@@ -55,7 +55,7 @@ color: ${darkTheme.primary};
 font-size: 16px;
 border-radius: 12px;
 font-weight 500;
-margin: 22px 0;
+margin: 42px 0;
 @media (max-width: 960px){
     font-size: 12px;
 }
@@ -65,6 +65,7 @@ const ToggleButton = styled.div`
   padding: 8px 18px;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   &:hover {
     background: ${darkTheme.primary + 20};
   }
@@ -99,11 +100,7 @@ export const Projects = ({ openModal, setOpenModal }) => {
     <Container id="Projects">
       <Wrapper>
         <Title>Proyectos, insignias y certificados</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
+        <Desc>
           He trabajado en varios proyectos. Desde el desarrollo de aplicaciones
           web (Front/Back) hasta el diseño de bases de datos y arquitecturas de
           software.

@@ -16,6 +16,7 @@ const Body = styled.div`
 const Wrapper = styled.div`
   background: ${wrapperStyle.bg};
   width: 100%;
+  padding-bottom: 30px;
   clip-path: ${wrapperStyle.clipPath};
 `;
 

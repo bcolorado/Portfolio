@@ -1,5 +1,6 @@
 import img1 from "../assets/ExperiencePic/lab101_unal_logo.jpg";
 import img2 from "../assets/ExperiencePic/sitlen.jpg";
+import img3 from '../assets/ExperiencePic/unal.jpg'
 
 export const Bio = {
   name: "Bryan Smith",
@@ -125,6 +126,22 @@ export const experiences = [
     date: "Agosto 2023 - Actualidad",
     desc: "Trabajando en el backend de la plataforma Sitlen, respaldando la creación y mejora continua de servicios esenciales para el proyecto.",
     skills: ["JavaScript", "ExpressJs", "Firebase"],
+  },
+  {
+    id: 2,
+    img: img3,
+    role: "Arquitecto de Software",
+    company: "Universidad Nacional de Colombia",
+    date: "Febrero 2023 - Junio 2023",
+    desc: "Estuve cumpliendo el rol de Arquitecto de software en un proyecto colaborativo para la materia arquitectura de software en la Universidad Nacional de Colombia.",
+  },
+  {
+    id: 3,
+    img: img3,
+    role: "Ingeniería de Sistemas y Computación",
+    company: "Universidad Nacional de Colombia",
+    date: "Febrero 2020 - Actualidad",
+    desc: "Estudiante activo de ingeniería de sistemas y computación de la Universidad Nacional de Colombia.",
   },
 ];
 
