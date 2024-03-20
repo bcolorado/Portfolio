@@ -6,6 +6,7 @@ import { Icon } from "./Icon";
 // import logo from "../../assets/Icons/react.svg";
 
 const Container = styled.div`
+margin-top: 100px;
 display: flex;
 flex-direction: column;
 justify-content-center;

@@ -11,6 +11,7 @@ export const Bio = {
   resume:
     "https://drive.google.com/file/d/1taTCSAG-h1IGkxyDZGNaFDW2l8JKU_1h/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/smith-colorado/",
+  insta: "https://www.instagram.com/smithcol_/"
 };
 
 export const skills = [
@@ -134,6 +135,7 @@ export const experiences = [
     company: "Universidad Nacional de Colombia",
     date: "Febrero 2023 - Junio 2023",
     desc: "Estuve cumpliendo el rol de Arquitecto de software en un proyecto colaborativo para la materia arquitectura de software en la Universidad Nacional de Colombia.",
+    skills: ["GCP", "Docker"],
   },
   {
     id: 3,
