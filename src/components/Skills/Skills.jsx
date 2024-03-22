@@ -3,16 +3,15 @@ import { skills } from "../../data/constants";
 import styled from "styled-components";
 import { darkTheme } from "../../utils/Themes";
 import { Icon } from "./Icon";
-// import logo from "../../assets/Icons/react.svg";
 
 const Container = styled.div`
-margin-top: 100px;
-display: flex;
-flex-direction: column;
-justify-content-center;
-position: relative;
-z-index: 1;
-align-items: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  align-items: center;
 `;
 
 const Wrapper = styled.div`
@@ -22,7 +21,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   gap: 12px;
   @media (max-width: 960px) {
     flex-direction: column;
@@ -44,8 +43,8 @@ const Title = styled.div`
 const Description = styled.div`
   font-size: 24px;
   text-align: center;
-  padding-left: 20px; /* Padding izquierdo */
-  padding-right: 20px; /* Padding derecho */
+  padding-left: 20px;
+  padding-right: 20px;
   color: ${darkTheme.text_primary + 95};
   @media (max-width: 640px) {
     font-size: 22px;

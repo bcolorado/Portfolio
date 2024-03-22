@@ -43,6 +43,7 @@ function App() {
           </Wrapper>
           <Wrapper>
             <Projects openModal={openModal} setOpenModal={setOpenModal} />
+            <Experience />
           </Wrapper>
 
           <Footer />

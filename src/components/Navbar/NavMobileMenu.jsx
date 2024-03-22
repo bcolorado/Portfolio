@@ -1,6 +1,6 @@
 import React from 'react';
 import { GithubButton, MobileMenu, MobileMenuLink } from './NavbarStyles';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
   return (
@@ -35,6 +35,15 @@ export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
           >
             <FaGithub size="1.5rem"/>
             Github
+          </GithubButton>
+
+          <GithubButton
+            style={{ width: "max-content" }}
+            href="/"
+            target="_Blank"
+          >
+            <FaLinkedin size="1.5rem"/>
+            Linkedin
           </GithubButton>
         </MobileMenu>
       )}

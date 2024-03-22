@@ -90,6 +90,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   padding: 0 10px;
   text-align: center;
+  gap:12px;
   @media screen and (max-width: 960px) {
     display: none;
   }
