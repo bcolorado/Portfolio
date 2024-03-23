@@ -192,7 +192,7 @@ export const education = [
     img: img3,
     school: "Universidad Nacional de Colombia, Bogotá",
     date: "Febrero 2020 - Actualidad",
-    grade: "4.5/5.0",
+    grade: " 4.5/5.0",
     desc: "Actualmente estoy cursando un pregrado en Ingeniería de Sistemas y computación en la Universidad Nacional de Colombia, Bogotá. Me encuentro en noveno semestre y he enfocado gran parte de mi trayectoría al desarrollo y la arquitectura de software. He tomado cursos de Estructuras de Datos, Algoritmos, Programación orientada a Objetos, Bases de Datos, Criptografia, Redes de Computadores, Arquitectura de Software, entre muchos otros.",
     degree: "Pregrado universitario - Ingeniería de Sistemas y Computación.",
   },

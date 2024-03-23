@@ -39,11 +39,10 @@ function App() {
           <Wrapper>
             <Skills />
             <Experience />
-            {/* <Education /> */}
           </Wrapper>
           <Wrapper>
             <Projects openModal={openModal} setOpenModal={setOpenModal} />
-            <Experience />
+            <Education />
           </Wrapper>
 
           <Footer />

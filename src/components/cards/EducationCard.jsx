@@ -28,7 +28,7 @@ const Body = styled.div`
 const Name = styled.div`
   font-size: 18px;
   font-weight: 600px;
-  color: ${darkTheme.text_primary + 99};
+  color: ${darkTheme.text_primary};
 
   @media only screen and (max-width: 960px) {
     font-size: 14px;
@@ -37,7 +37,7 @@ const Name = styled.div`
 const Degree = styled.div`
   font-size: 14px;
   font-weight: 500px;
-  color: ${darkTheme.text_secondary + 99};
+  color: ${darkTheme.text_secondary};
 
   @media only screen and (max-width: 960px) {
     font-size: 12px;
@@ -55,7 +55,7 @@ const Date = styled.div`
 const Grade = styled.div`
   font-size: 14px;
   font-weight: 500;
-  color: ${darkTheme.text_secondary + 99};
+  color: ${darkTheme.text_primary + 99};
   @media only screen and (max-width: 960px) {
     font-size: 12px;
   }
@@ -91,8 +91,7 @@ const EducationCard = ({ education }) => {
         gap: "12px",
         background: "#1d1836",
         color: "#fff",
-        boxShadow: "rgba(23, 92, 230, 0.15) 0px 4px 24px",
-        // backdropFilter: "blur(3px) saturate(106%)",
+        boxShadow: "0 0 5px rgba(255, 255, 255, 0.3)",
         backgroundColor: "rgba(17, 25, 40, 0.83)",
         border: "1px solid rgba(255, 255, 255, 0.125)",
         borderRadius: "6px",
