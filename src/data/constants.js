@@ -198,3 +198,11 @@ export const education = [
   },
  
 ];
+
+export const quote =[
+  {
+    quote:'«El paso más importante que puede dar alguien. No es el primero, ¿verdad?»\n\n«Es el próximo. Siempre el próximo paso»',
+    author: "Brandon Sanderson",
+    source: "Oathbringer",
+  },
+]

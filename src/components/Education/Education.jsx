@@ -8,6 +8,7 @@ import { darkTheme } from "../../utils/Themes";
 
 const Container = styled.div`
 margin-top: 100px;
+margin-bottom: 8rem;
 display: flex;
 flex-direction: column;
 justify-content-center;
@@ -37,17 +38,17 @@ const Title = styled.div`
   color: ${darkTheme.text_primary};
   @media (max-width: 960px) {
     margin-top: 12px;
-    font-size: 32px;
+    font-size: 44px;
   }
 `;
 
 const Desc = styled.div`
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
   font-weight: 600;
   color: ${darkTheme.text_secondary};
   @media (max-width: 960px) {
-    font-size: 16px;
+    font-size: 22px;
   }
 `;
 

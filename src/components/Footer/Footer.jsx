@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Bio } from "../../data/constants";
+import { Bio, quote } from "../../data/constants";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { darkTheme } from "../../utils/Themes";
+import { QuoteCard } from "../Cards/QuoteCard";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -17,6 +18,7 @@ const FooterContainer = styled.div`
 const FooterWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -85,6 +87,7 @@ const Copyright = styled.p`
 export const Footer = () => {
   return (
     <FooterContainer>
+      <QuoteCard author={quote[0].author} quote={quote[0].quote} source={quote[0].source}/>
       <FooterWrapper>
         <Logo>Bryan Smith Colorado</Logo>
         <Nav>
