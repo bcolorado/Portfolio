@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { darkTheme } from "../../utils/Themes";
-import { Bio } from "../../data/constants";
+import { darkTheme } from "../../../utils/Themes";
+import { Bio } from "../../../data/constants";
 import Typewriter from "typewriter-effect";
-import picture from "../../assets/portfolioPic.jpg";
-import HeroBgAnimation from "../HeroBgAnimation";
+import picture from "../../../assets/portfolioPic.webp";
+import HeroBgAnimation from "./HeroBgAnimation/index";
 import "./btnStyles.css";
 
 const HeroContainer = styled.div`

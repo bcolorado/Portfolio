@@ -5,7 +5,7 @@ export const Icon = ({ iconName }) => {
 
   useEffect(() => {
     // Se importa dinámicamente el archivo SVG correspondiente en función del nombre del icono
-    import(`../../assets/Icons/${iconName}.svg`)
+    import(`../../../assets/Icons/${iconName}.svg`)
       .then((module) => {
         setIconSrc(module.default);
       })
@@ -15,6 +15,6 @@ export const Icon = ({ iconName }) => {
   }, [iconName]);
 
   // Retorna el componente de icono importado dinámicamente
-  return iconSrc && <img src={iconSrc} alt={iconName} style={{ width: '24px', height: '24px'}} />;
+  return iconSrc && <img loading="lazy" src={iconSrc} alt={iconName} style={{ width: '24px', height: '24px'}} />;
 };
 

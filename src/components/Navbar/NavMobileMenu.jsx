@@ -7,25 +7,25 @@ export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
     <>
       {isOpen && (
         <MobileMenu open={isOpen}>
-          <MobileMenuLink onClick={() => setIsOpen(!isOpen)} href="#inicio">
+          <MobileMenuLink onClick={() => setIsOpen(!isOpen)} href="#about">
             Inicio
           </MobileMenuLink>
           <MobileMenuLink
             onClick={() => setIsOpen(!isOpen)}
-            href="#habilidades"
+            href="#skills"
           >
             Habilidades
           </MobileMenuLink>
           <MobileMenuLink
             onClick={() => setIsOpen(!isOpen)}
-            href="#experiencia"
+            href="#Experience"
           >
             Experiencia
           </MobileMenuLink>
-          <MobileMenuLink onClick={() => setIsOpen(!isOpen)} href="#proyectos">
+          <MobileMenuLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
             Proyectos
           </MobileMenuLink>
-          <MobileMenuLink onClick={() => setIsOpen(!isOpen)} href="#educación">
+          <MobileMenuLink onClick={() => setIsOpen(!isOpen)} href="#Education">
             Educación
           </MobileMenuLink>
           <GithubButton

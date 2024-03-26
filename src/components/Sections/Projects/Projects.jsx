@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { darkTheme } from "../../utils/Themes";
-import { projects } from "../../data/constants";
-import { ProjectCard } from "../Cards/ProjectCard";
+import { darkTheme } from "../../../utils/Themes";
+import { projects } from "../../../data/constants";
+import { ProjectCard } from "../../Cards/ProjectCard";
 
 const Container = styled.div`
 margin-top: 100px;

@@ -1,7 +1,7 @@
 import React from "react";
-import { skills } from "../../data/constants";
+import { skills } from "../../../data/constants";
 import styled from "styled-components";
-import { darkTheme } from "../../utils/Themes";
+import { darkTheme } from "../../../utils/Themes";
 import { Icon } from "./Icon";
 
 const Container = styled.div`
@@ -125,8 +125,8 @@ export const Skills = () => {
         <Title>Habilidades</Title>
 
         <Description>
-          Estás son algunas de las habilidades que he adquirido a lo largo de mi
-          carrera profesional:
+        Estas son algunas de las habilidades que he adquirido a 
+        lo largo de mi carrera profesional:
         </Description>
 
         <SkillsContainer>
