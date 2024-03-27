@@ -1,6 +1,8 @@
-import img1 from "../assets/ExperiencePic/lab101_unal_logo.jpg";
-import img2 from "../assets/ExperiencePic/sitlen.jpg";
-import img3 from '../assets/ExperiencePic/unal.jpg'
+import img1 from "../assets/ExperiencePic/lab101_unal_logo.webp";
+import img2 from "../assets/ExperiencePic/sitlen.webp";
+import img3 from '../assets/ExperiencePic/unal.webp'
+import img4 from '../assets/ExperiencePic/logoSena.webp'
+import img5 from '../assets/ExperiencePic/bachiller.webp'
 
 export const Bio = {
   name: "Bryan Smith",
@@ -195,6 +197,24 @@ export const education = [
     grade: " 4.5/5.0",
     desc: "Actualmente estoy cursando un pregrado en Ingeniería de Sistemas y computación en la Universidad Nacional de Colombia, Bogotá. Me encuentro en noveno semestre y he enfocado gran parte de mi trayectoría al desarrollo y la arquitectura de software. He tomado cursos de Estructuras de Datos, Algoritmos, Programación orientada a Objetos, Bases de Datos, Criptografia, Redes de Computadores, Arquitectura de Software, entre muchos otros.",
     degree: "Pregrado universitario - Ingeniería de Sistemas y Computación.",
+  },
+  {
+    id: 1,
+    img: img4,
+    school: "Servicio Nacional de Aprendizaje SENA, Soacha",
+    date: "Febrero 2015 - Noviembre 2017",
+    grade: " 4.5/5.0",
+    desc: "Técnico en Sistemas en el que aprendí las bases lógicas de la programación, así como un primer acercamiento a lenguajes básicos como DFD y LPP. De igual forma, obtuve conocimientos básicos de componentes de harware y su correcto mantenimiento preventivo y correctivo.",
+    degree: "Técnico - Sistemas",
+  },
+  {
+    id: 1,
+    img: img5,
+    school: "Gimnasio Moderno Robinson Crusoe, Soacha",
+    date: "Febrero 2015 - Noviembre 2017",
+    grade: " N/A",
+    desc: "Colegio en el que hice mi bachillerato y me gradué de once.",
+    degree: "Colegio - Bachillerato",
   },
  
 ];
