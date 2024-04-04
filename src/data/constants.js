@@ -175,7 +175,7 @@ export const projects = [
     webapp: "https://www.google.com/",
   },
   {
-    id: 1,
+    id: 2,
     title: "Test arch",
     date: "Jun 2023 - Jul 2023",
     description: "This is a placeholder",
@@ -183,6 +183,18 @@ export const projects = [
       "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
     tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
     category: "arch",
+    github: "https://github.com/bcolorado",
+    webapp: "https://www.google.com/",
+  },
+  {
+    id: 3,
+    title: "Test cert",
+    date: "Jun 2023 - Jul 2023",
+    description: "This is a placeholder",
+    image:
+      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
+    category: "cert",
     github: "https://github.com/bcolorado",
     webapp: "https://www.google.com/",
   },

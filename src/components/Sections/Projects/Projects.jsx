@@ -133,6 +133,13 @@ export const Projects = ({ openModal, setOpenModal }) => {
           >
             Arquitectura
           </ToggleButton>
+          <Divider />
+          <ToggleButton
+            active={toggle === "cert"}
+            onClick={() => setToggle("cert")}
+          >
+            Certificados
+          </ToggleButton>
         </ToggleGroup>
         <CardContainer>
           {toggle === "all" &&
