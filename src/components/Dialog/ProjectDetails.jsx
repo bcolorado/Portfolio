@@ -95,11 +95,11 @@ const Tags = styled.div`
 const Tag = styled.div`
   font-size: 14px;
   font-weight: 400;
-  color: ${darkTheme.primary};
+  color: ${props => props.color || darkTheme.primary};
+  background-color: ${props => (props.color + 15) || (darkTheme.primary + 15)};
   margin: 4px;
   padding: 4px 8px;
   border-radius: 8px;
-  background-color: ${darkTheme.primary + 20};
   @media only screen and (max-width: 600px) {
     font-size: 12px;
   }
@@ -204,7 +204,7 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
           <Date>{project.date}</Date>
           <Tags>
             {project?.tags.map((tag) => (
-              <Tag>{tag}</Tag>
+              <Tag color={tag.color}>{tag.name}</Tag>
             ))}
           </Tags>
           <Desc>{project?.description}</Desc>
@@ -239,9 +239,11 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
             <Button dull href={project?.github} target="new">
               Ver código
             </Button>
-            <Button href={project?.webapp} target="new">
+            
+            {project?.category !== "back" &&
+            (<Button href={project?.webapp} target="new">
               Ver proyecto
-            </Button>
+            </Button>)}
           </ButtonGroup>
         </Wrapper>
       </Container>

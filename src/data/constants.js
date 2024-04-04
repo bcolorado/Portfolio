@@ -157,7 +157,7 @@ export const projects = [
     description: "This is a placeholder",
     image:
       "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: ["Docker", "AWS", "JavaScript"],
+    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
     category: "front",
     github: "https://github.com/bcolorado",
     webapp: "https://www.google.com/",
@@ -169,7 +169,7 @@ export const projects = [
     description: "This is a placeholder",
     image:
       "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: ["Docker", "AWS", "JavaScript"],
+    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
     category: "back",
     github: "https://github.com/bcolorado",
     webapp: "https://www.google.com/",
@@ -181,7 +181,7 @@ export const projects = [
     description: "This is a placeholder",
     image:
       "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: ["Docker", "AWS", "JavaScript"],
+    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
     category: "arch",
     github: "https://github.com/bcolorado",
     webapp: "https://www.google.com/",

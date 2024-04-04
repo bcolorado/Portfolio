@@ -41,8 +41,8 @@ const Tags = styled.div`
 const Tag = styled.div`
   font-size: 12px;
   font-weight: 400;
-  color: ${darkTheme.primary};
-  background-color: ${darkTheme.primary + 15};
+  color: ${props => props.color || darkTheme.primary};
+  background-color: ${props => (props.color + 15) || (darkTheme.primary + 15)};
   padding: 2px 8px;
   border-radius: 10px;
 `;
@@ -112,7 +112,7 @@ export const ProjectCard = ({ project, setOpenModal }) => {
       <Image src={project.image} />
       <Tags>
         {project.tags?.map((tag, index) => (
-          <Tag key={`projectCardTag-${index}`}>{tag}</Tag>
+          <Tag key={`projectCardTag-${index}`} color={tag.color}>{tag.name}</Tag>
         ))}
       </Tags>
       <Details>
