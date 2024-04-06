@@ -10,11 +10,20 @@ export const Bio = {
   description:
     "Mente motivada y versátil, siempre preparado para afrontar nuevos y grandes desafíos. Mi pasión por el aprendizaje me impulsa a ofrecer resultados de alta calidad en cada proyecto. Con una actitud positiva y una mentalidad de crecimiento, estoy listo para hacer una contribución significativa y alcanzar grandes logros.",
   github: "https://github.com/bcolorado",
+  githubPic: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
   resume:
     "https://drive.google.com/file/d/1taTCSAG-h1IGkxyDZGNaFDW2l8JKU_1h/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/smith-colorado/",
   insta: "https://www.instagram.com/smithcol_/"
 };
+
+
+const colors ={
+  react: "#1399c4",
+  typeScript: "#007acc",
+  vite : "#f6ab09",
+  bootStrap : "#7952b3",
+}
 
 export const skills = [
   {
@@ -152,16 +161,25 @@ export const experiences = [
 export const projects = [
   {
     id: 0,
-    title: "Test front",
-    date: "Jun 2023 - Jul 2023",
-    description: "This is a placeholder",
+    title: "NoteCrafter",
+    date: "Marzo 2024",
+    description: "Aplicación que permite tomar notas con soporte para Markdown, búsqueda y filtrado por categorías desarrollada con React y TypeScript. Es importante destacar que este proyecto marca mi incursión en el uso de TypeScript, lo que representa un hito significativo en mi desarrollo profesional. A través de este proyecto, he tenido la oportunidad de familiarizarme con las características y ventajas de TypeScript, fortaleciendo así mis habilidades como desarrollador y abriendo nuevas oportunidades para futuros proyectos y colaboraciones.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
+      "https://i.im.ge/2024/04/07/WWwAAf.image.png",
+    tags: [{name:"React", color:colors.react}, {name:"TypeScript", color:colors.typeScript},{ name:"Vite", color:colors.vite}, { name:"BootStrap", color:colors.bootStrap}],
     category: "front",
-    github: "https://github.com/bcolorado",
-    webapp: "https://www.google.com/",
+    github: "https://github.com/bcolorado/Note-crafter",
+    webapp: "https://notecrafter.netlify.app/",
+    member: [
+      {
+        name: "Bryan Colorado",
+        img: Bio.githubPic,
+        linkedin: Bio.linkedin,
+        github: Bio.github,
+      },
+    ],
   },
+
   {
     id: 1,
     title: "Test back",

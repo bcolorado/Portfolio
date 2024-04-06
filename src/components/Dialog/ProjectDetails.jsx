@@ -1,8 +1,8 @@
-import { CloseRounded, GitHub, LinkedIn } from "@mui/icons-material";
-import { Modal } from "@mui/material";
-import React from "react";
-import styled from "styled-components";
-import { darkTheme } from "../../utils/Themes";
+import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
+import { Modal } from '@mui/material';
+import React from 'react';
+import styled from 'styled-components';
+import { darkTheme } from '../../utils/Themes';
 
 const Container = styled.div`
   width: 100%;
@@ -56,7 +56,7 @@ const Date = styled.div`
 const Desc = styled.div`
   font-size: 16px;
   font-weight: 400;
-  color: ${darkTheme.text_primary};
+  color: ${darkTheme.text_secondary};
   margin: 8px 6px;
   @media only screen and (max-width: 600px) {
     font-size: 14px;
@@ -95,8 +95,8 @@ const Tags = styled.div`
 const Tag = styled.div`
   font-size: 14px;
   font-weight: 400;
-  color: ${props => props.color || darkTheme.primary};
-  background-color: ${props => (props.color + 15) || (darkTheme.primary + 15)};
+  color: ${(props) => props.color || darkTheme.primary};
+  background-color: ${(props) => props.color + 15 || darkTheme.primary + 15};
   margin: 4px;
   padding: 4px 8px;
   border-radius: 8px;
@@ -181,24 +181,52 @@ const Button = styled.a`
   }
 `;
 
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+  target: _blank;
+  &:hover {
+    color: ${darkTheme.primary};
+  }
+`;
+
+const StyledCloseBtn = styled.div`
+  transition: color 0.3s ease;
+  &:hover {
+    color: ${darkTheme.primary};
+  }
+`;
+
 export const ProjectDetails = ({ openModal, setOpenModal }) => {
   const project = openModal?.project;
+
+  const handleClose = () => {
+    setOpenModal({ state: false, project: null });
+  };
+
+  const stopPropagation = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <Modal
       open={true}
       onClose={() => setOpenModal({ state: false, project: null })}
     >
-      <Container>
-        <Wrapper>
-          <CloseRounded
-            style={{
-              position: "absolute",
-              top: "10px",
-              right: "20px",
-              cursor: "pointer",
-            }}
-            onClick={() => setOpenModal({ state: false, project: null })}
-          />
+      <Container onClick={handleClose}>
+        <Wrapper onClick={stopPropagation}>
+          <StyledCloseBtn>
+            <CloseRounded
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '20px',
+                cursor: 'pointer',
+              }}
+              onClick={() => setOpenModal({ state: false, project: null })}
+            />
+          </StyledCloseBtn>
           <Image src={project?.image} />
           <Title>{project?.title}</Title>
           <Date>{project.date}</Date>
@@ -216,34 +244,37 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
                   <Member>
                     <MemberImage src={member.img} />
                     <MemberName>{member.name}</MemberName>
-                    <a
+
+                    <StyledLink
+                      target='_blank'
+                      rel='noopener noreferrer'
                       href={member.github}
-                      target="new"
-                      style={{ textDecoration: "none", color: "inherit" }}
                     >
                       <GitHub />
-                    </a>
-                    <a
+                    </StyledLink>
+
+                    <StyledLink
+                      target='_blank'
+                      rel='noopener noreferrer'
                       href={member.linkedin}
-                      target="new"
-                      style={{ textDecoration: "none", color: "inherit" }}
                     >
                       <LinkedIn />
-                    </a>
+                    </StyledLink>
                   </Member>
                 ))}
               </Members>
             </>
           )}
           <ButtonGroup>
-            <Button dull href={project?.github} target="new">
+            <Button dull href={project?.github} target='new'>
               Ver código
             </Button>
-            
-            {project?.category !== "back" &&
-            (<Button href={project?.webapp} target="new">
-              Ver proyecto
-            </Button>)}
+
+            {project?.category !== 'back' && (
+              <Button href={project?.webapp} target='new'>
+                Ver proyecto
+              </Button>
+            )}
           </ButtonGroup>
         </Wrapper>
       </Container>

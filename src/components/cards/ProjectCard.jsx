@@ -29,6 +29,7 @@ const Image = styled.img`
   background-color: ${darkTheme.white};
   border-radius: 10px;
   box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
+  loading: lazy;
 `;
 const Tags = styled.div`
   width: 100%;
@@ -121,7 +122,7 @@ export const ProjectCard = ({ project, setOpenModal }) => {
         <Description>{project.description}</Description>
       </Details>
       <Members>
-        {project.member?.map((member) => (
+        {project.member?.map((member, index) => (
           <Avatar key={`projectCardMember-${index}`} src={member.img} />
         ))}
       </Members>
