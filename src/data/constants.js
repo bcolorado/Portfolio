@@ -23,6 +23,11 @@ const colors ={
   typeScript: "#007acc",
   vite : "#f6ab09",
   bootStrap : "#7952b3",
+  python : "#306998",
+  django : "#006757",
+  MongoDb : "#13aa52",
+  MongoAtlas : "#4ea94b",
+  RabbitMQ : "#ff6600",
 }
 
 export const skills = [
@@ -182,15 +187,22 @@ export const projects = [
 
   {
     id: 1,
-    title: "Test back",
-    date: "Jun 2023 - Jul 2023",
-    description: "This is a placeholder",
+    title: "Microservicio Chats",
+    date: "Marzo 2023",
+    description: "Este microservicio forma parte integral de un sistema compuesto por microservicios y está diseñado para administrar la funcionalidad de chat dentro de la aplicación. Su principal responsabilidad es manejar los mensajes enviados por los usuarios utilizando una cola de mensajería (RabbitMQ), y se implementa mediante contenedores Docker. Actualmente, no está en ejecución debido a labores de mantención de la base de datos y cambios en las variables de entorno.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
+      "https://i.im.ge/2024/04/07/WWnIF8.image.png",
+    tags: [{name:"Python", color:colors.python}, {name:"Django", color:colors.django},{ name:"MongoDB", color:colors.MongoDb}, { name:"Mongo Atlas", color:colors.MongoAtlas}, { name:"RabbitMQ", color:colors.RabbitMQ}],
     category: "back",
-    github: "https://github.com/bcolorado",
-    webapp: "https://www.google.com/",
+    github: "https://github.com/bcolorado/tutoacademy_chat_ms/",
+    member: [
+      {
+        name: "Bryan Colorado",
+        img: Bio.githubPic,
+        linkedin: Bio.linkedin,
+        github: Bio.github,
+      },
+    ],
   },
   {
     id: 2,
