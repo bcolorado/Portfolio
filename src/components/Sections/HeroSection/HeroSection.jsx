@@ -1,10 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { darkTheme } from "../../../utils/Themes";
 import { Bio } from "../../../data/constants";
 import Typewriter from "typewriter-effect";
 import picture from "../../../assets/portfolioPic.webp";
-import HeroBgAnimation from "./HeroBgAnimation/index";
 import "./btnStyles.css";
 
 const HeroContainer = styled.div`
@@ -150,16 +149,33 @@ const Subtitle = styled.div`
   }
 `;
 
+const morph = keyframes`
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+`;
+
 const Img = styled.img`
   position: relative;
   width: 100%;
   height: 100%;
   max-width: 450px;
   max-height: 450px;
-  border-radius: 50%;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
   object-fit: cover;
   object-position: center;
+  animation: ${morph} 8s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+
   @media (max-width: 960px) {
     max-width: 400px;
     max-height: 400px;
@@ -175,9 +191,6 @@ export const HeroSection = () => {
   return (
     <div id="about">
       <HeroContainer>
-        <HeroBg>
-          <HeroBgAnimation />
-        </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
             <Title>
