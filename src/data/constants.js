@@ -3,6 +3,7 @@ import img2 from "../assets/ExperiencePic/sitlen.webp";
 import img3 from '../assets/ExperiencePic/unal.webp'
 import img4 from '../assets/ExperiencePic/logoSena.webp'
 import img5 from '../assets/ExperiencePic/bachiller.webp'
+import { Javascript } from "@mui/icons-material";
 
 export const Bio = {
   name: "Bryan Smith",
@@ -25,9 +26,13 @@ const colors ={
   bootStrap : "#7952b3",
   python : "#306998",
   django : "#006757",
-  MongoDb : "#13aa52",
-  MongoAtlas : "#4ea94b",
-  RabbitMQ : "#ff6600",
+  mongoDb : "#13aa52",
+  mongoAtlas : "#4ea94b",
+  rabbitMQ : "#ff6600",
+  javascript : "#f7df1e",
+  nodeJs : "#68a063",
+  express : "#666666",
+  graphQL : "#e535ab",
 }
 
 export const skills = [
@@ -192,7 +197,7 @@ export const projects = [
     description: "Este microservicio forma parte integral de un sistema compuesto por microservicios y está diseñado para administrar la funcionalidad de chat dentro de la aplicación. Su principal responsabilidad es manejar los mensajes enviados por los usuarios utilizando una cola de mensajería (RabbitMQ), y se implementa mediante contenedores Docker. Actualmente, no está en ejecución debido a labores de mantención de la base de datos y cambios en las variables de entorno.",
     image:
       "https://i.im.ge/2024/04/07/WWnIF8.image.png",
-    tags: [{name:"Python", color:colors.python}, {name:"Django", color:colors.django},{ name:"MongoDB", color:colors.MongoDb}, { name:"Mongo Atlas", color:colors.MongoAtlas}, { name:"RabbitMQ", color:colors.RabbitMQ}],
+    tags: [{name:"Python", color:colors.python}, {name:"Django", color:colors.django},{ name:"MongoDB", color:colors.mongoDb}, { name:"Mongo Atlas", color:colors.mongoAtlas}, { name:"RabbitMQ", color:colors.rabbitMQ}],
     category: "back",
     github: "https://github.com/bcolorado/tutoacademy_chat_ms/",
     member: [
@@ -206,15 +211,46 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Test arch",
-    date: "Jun 2023 - Jul 2023",
-    description: "This is a placeholder",
+    title: "Componente lógico Api Gateway",
+    date: "Abril 2023 - Junio 2023",
+    description: "Este componente lógico es una parte esencial de un sistema basado en microservicios que se realizó de manera conjunta. Su función principal es orquestar y coordinar todas las solicitudes que llegan desde el cliente, así como gestionar los diferentes microservicios. Utiliza el lenguaje de consulta GraphQL para armar y enviar solicitudes conjuntas a estos microservicios. Además, se despliega en un contenedor Docker para facilitar su implementación y gestión.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
-    category: "arch",
-    github: "https://github.com/bcolorado",
-    webapp: "https://www.google.com/",
+      "https://i.im.ge/2024/04/07/WKm93p.image.png",
+    tags: [{name:"JavaScript", color:colors.javascript}, {name:"ExpressJs", color:colors.express},{ name:"NodeJS", color:colors.nodeJs}, { name:"GraphQL", color:colors.graphQL}, { name:"RabbitMQ", color:colors.rabbitMQ}],
+    category: "back",
+    github: "https://github.com/bcolorado/tutoacademy_ag",
+    member: [
+      {
+        name: "Bryan Colorado",
+        img: Bio.githubPic,
+        linkedin: Bio.linkedin,
+        github: Bio.github,
+      },
+      {
+        name: "Miguel Puentes",
+        img: "https://avatars.githubusercontent.com/u/85960517?v=4",
+        linkedin: "https://www.linkedin.com/in/mipuentesc/",
+        github: "https://github.com/FallenMap",
+      },
+      {
+        name: "Reinaldo Toledo",
+        img: "https://avatars.githubusercontent.com/u/70295723?v=4",
+        linkedin: "https://www.linkedin.com/in/reinaldo-toledo/",
+        github: "https://github.com/Rey7910",
+      },
+      {
+        name: "Sebastian Peñafiel",
+        img: "https://avatars.githubusercontent.com/u/95003496?v=4",
+        linkedin: "https://www.linkedin.com/in/sebastian-penafiel/",
+        github: "https://github.com/jpenafielo",
+      },
+      {
+        name: "María Cabrales",
+        img: "https://avatars.githubusercontent.com/u/71224060?v=4",
+        linkedin: "https://www.linkedin.com/in/maria-fernanda-cabrales-jaque-a19a8221b/",
+        github: "https://github.com/Mafs06",
+      },
+    ],
   },
   {
     id: 3,
