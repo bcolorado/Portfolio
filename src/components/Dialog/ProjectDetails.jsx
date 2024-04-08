@@ -232,7 +232,9 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
           <Date>{project.date}</Date>
           <Tags>
             {project?.tags.map((tag, index) => (
-              <Tag key={`${tag.name}-${index}`} color={tag.color}>{tag.name}</Tag>
+              <Tag key={`${tag.name}-${index}`} color={tag.color}>
+                {tag.name}
+              </Tag>
             ))}
           </Tags>
           <Desc>{project?.description}</Desc>
@@ -266,9 +268,11 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
             </>
           )}
           <ButtonGroup>
-            <Button dull href={project?.github} target='new'>
-              Ver código
-            </Button>
+            {project?.category !== 'arch' && (
+              <Button dull href={project?.github} target='new'>
+                Ver código
+              </Button>
+            )}
 
             {project?.category !== 'back' && (
               <Button href={project?.webapp} target='new'>

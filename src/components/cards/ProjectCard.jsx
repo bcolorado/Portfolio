@@ -4,7 +4,7 @@ import { darkTheme } from "../../utils/Themes";
 
 const Card = styled.div`
   width: 330px;
-  height: 490px;
+  height: 520px;
   background-color: ${darkTheme.card};
   cursor: pointer;
   border-radius: 10px;

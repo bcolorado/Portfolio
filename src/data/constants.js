@@ -13,7 +13,7 @@ export const Bio = {
   github: "https://github.com/bcolorado",
   githubPic: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
   resume:
-    "https://drive.google.com/file/d/1taTCSAG-h1IGkxyDZGNaFDW2l8JKU_1h/view?usp=sharing",
+    "https://drive.google.com/file/d/1NDN0LA63Ki6nBVT6Hk2ae8FPpLit0pRA/view?usp=drive_link",
   linkedin: "https://www.linkedin.com/in/smith-colorado/",
   insta: "https://www.instagram.com/smithcol_/"
 };
@@ -33,6 +33,12 @@ const colors ={
   nodeJs : "#68a063",
   express : "#666666",
   graphQL : "#e535ab",
+  arquitectura : "#b9b9f7",
+  rest: "#f7f2de",
+  soap : "#e9b0ac",
+  gcp : "#e34033",
+  microservicios : "#de5482",
+  nube : "#b2d6f3",
 }
 
 export const skills = [
@@ -168,6 +174,39 @@ export const experiences = [
   },
 ];
 
+const arquiMembers = [
+  {
+    name: "Bryan Colorado",
+    img: Bio.githubPic,
+    linkedin: Bio.linkedin,
+    github: Bio.github,
+  },
+  {
+    name: "Miguel Puentes",
+    img: "https://avatars.githubusercontent.com/u/85960517?v=4",
+    linkedin: "https://www.linkedin.com/in/mipuentesc/",
+    github: "https://github.com/FallenMap",
+  },
+  {
+    name: "Reinaldo Toledo",
+    img: "https://avatars.githubusercontent.com/u/70295723?v=4",
+    linkedin: "https://www.linkedin.com/in/reinaldo-toledo/",
+    github: "https://github.com/Rey7910",
+  },
+  {
+    name: "Sebastian Peñafiel",
+    img: "https://avatars.githubusercontent.com/u/95003496?v=4",
+    linkedin: "https://www.linkedin.com/in/sebastian-penafiel/",
+    github: "https://github.com/jpenafielo",
+  },
+  {
+    name: "María Cabrales",
+    img: "https://avatars.githubusercontent.com/u/71224060?v=4",
+    linkedin: "https://www.linkedin.com/in/maria-fernanda-cabrales-jaque-a19a8221b/",
+    github: "https://github.com/Mafs06",
+  },
+];
+
 export const projects = [
   {
     id: 0,
@@ -219,41 +258,22 @@ export const projects = [
     tags: [{name:"JavaScript", color:colors.javascript}, {name:"ExpressJs", color:colors.express},{ name:"NodeJS", color:colors.nodeJs}, { name:"GraphQL", color:colors.graphQL}, { name:"RabbitMQ", color:colors.rabbitMQ}],
     category: "back",
     github: "https://github.com/bcolorado/tutoacademy_ag",
-    member: [
-      {
-        name: "Bryan Colorado",
-        img: Bio.githubPic,
-        linkedin: Bio.linkedin,
-        github: Bio.github,
-      },
-      {
-        name: "Miguel Puentes",
-        img: "https://avatars.githubusercontent.com/u/85960517?v=4",
-        linkedin: "https://www.linkedin.com/in/mipuentesc/",
-        github: "https://github.com/FallenMap",
-      },
-      {
-        name: "Reinaldo Toledo",
-        img: "https://avatars.githubusercontent.com/u/70295723?v=4",
-        linkedin: "https://www.linkedin.com/in/reinaldo-toledo/",
-        github: "https://github.com/Rey7910",
-      },
-      {
-        name: "Sebastian Peñafiel",
-        img: "https://avatars.githubusercontent.com/u/95003496?v=4",
-        linkedin: "https://www.linkedin.com/in/sebastian-penafiel/",
-        github: "https://github.com/jpenafielo",
-      },
-      {
-        name: "María Cabrales",
-        img: "https://avatars.githubusercontent.com/u/71224060?v=4",
-        linkedin: "https://www.linkedin.com/in/maria-fernanda-cabrales-jaque-a19a8221b/",
-        github: "https://github.com/Mafs06",
-      },
-    ],
+    member: arquiMembers,
   },
   {
     id: 3,
+    title: "Sistema basado en microservicios",
+    date: "Febrero 2023 - Junio 2023",
+    description: `Tuto Academy es un sistema de software web diseñado para simplificar el proceso de ofrecer y solicitar servicios de tutorías académicas. Esta plataforma permite a los usuarios crear perfiles para exhibir su experiencia académica y los servicios que ofrecen, así como buscar y contactar a otros usuarios que satisfagan sus necesidades de aprendizaje. Además, ofrece una herramienta integrada de programación de sesiones de tutorías con un calendario para coordinar reuniones en línea. La aplicación también incluye un sistema de calificaciones y valoraciones que permite a los usuarios consultar las opiniones de otros sobre el servicio ofrecido por cada tutor. Dada la escala del proyecto, se ha dividido en microservicios para facilitar el desarrollo y mantenimiento. Cada microservicio se encarga de aspectos específicos del sistema, como la gestión de usuarios, la programación de sesiones de tutorías, la gestión de mensajes y la orquestación de solicitudes. Por otra parte, para garantizar atributos de calidad como seguridad, alta disponibilidad, rendimiento e interoperabilidad, hemos implementado diversas estrategias arquitectónicas, como el uso de proxys inversos, balanceadores de cargar, replicamiento de bases de datos, escalamiento élastico en componentes críticos, autenticación mediante Google OAuth y el diseño de un entorno de despliegue en la nube (GCP). Aunque la aplicación ya no está disponible en producción debido a los costos asociados con su mantenimiento en la nube (GCP), contamos con un video demostrativo que ilustra su funcionamiento en una etapa específica del desarrollo y las diferentes vistas arquitectónicas desarrolladas a lo largo de todo el ciclo de vida del sistema.`,
+    image:
+      "https://i.im.ge/2024/04/08/WkzMnT.image.png",
+    tags: [{name:"Arquitectura software", color:colors.arquitectura}, {name:"REST", color:colors.rest},{ name:"SOAP", color:colors.soap}, { name:"GCP", color:colors.gcp}, { name:"Nube", color:colors.nube}, { name:"Microservicios", color:colors.microservicios}],
+    category: "arch",
+    webapp: "https://drive.google.com/drive/folders/1XICgmD71D3Gq7ZotqapI12Q27bkgrHu7?usp=sharing",
+    member: arquiMembers,
+  },
+  {
+    id: 4,
     title: "Test cert",
     date: "Jun 2023 - Jul 2023",
     description: "This is a placeholder",

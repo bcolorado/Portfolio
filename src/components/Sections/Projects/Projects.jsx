@@ -32,7 +32,7 @@ const Title = styled.div`
   text-align: center;
   font-weight: 600;
   margin-top: 20px;
-  color: ${darkTheme.text_primary};
+  color: ${(prop) => prop.color || darkTheme.text_primary};
   @media (max-width: 960px) {
     margin-top: 12px;
     font-size: 44px;
@@ -162,6 +162,7 @@ export const Projects = ({ openModal, setOpenModal }) => {
               />
             ))}
         </CardContainer>
+        <Title color={'#e64c4c'}>Más proyectos pronto... 😶‍🌫️</Title>
       </Wrapper>
     </Container>
   );
