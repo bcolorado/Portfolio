@@ -65,10 +65,11 @@ const Desc = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  object-fit: cover;
+  width: ${(props) => (props?.type === 'cert' ? '340px' : '100%')};
+  align-self: center;
   border-radius: 12px;
   margin-top: 30px;
+  object-fit: contain;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 `;
 
@@ -227,7 +228,7 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
               onClick={() => setOpenModal({ state: false, project: null })}
             />
           </StyledCloseBtn>
-          <Image src={project?.image} />
+          <Image type={project.category} src={project?.image} />
           <Title>{project?.title}</Title>
           <Date>{project.date}</Date>
           <Tags>
@@ -268,15 +269,21 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
             </>
           )}
           <ButtonGroup>
-            {project?.category !== 'arch' && (
+            {project?.category !== 'arch' && project?.category !== 'cert' && (
               <Button dull href={project?.github} target='new'>
                 Ver código
               </Button>
             )}
 
-            {project?.category !== 'back' && (
+            {project?.category !== 'back' && project?.category !== 'cert' && (
               <Button href={project?.webapp} target='new'>
                 Ver proyecto
+              </Button>
+            )}
+
+            {project?.category === 'cert' && (
+              <Button href={project?.webapp} target='new'>
+                Ver Certificado
               </Button>
             )}
           </ButtonGroup>

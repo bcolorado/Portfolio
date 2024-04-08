@@ -39,6 +39,8 @@ const colors ={
   gcp : "#e34033",
   microservicios : "#de5482",
   nube : "#b2d6f3",
+  docker : "#2395ec",
+  aws: "#e18905",
 }
 
 export const skills = [
@@ -236,7 +238,7 @@ export const projects = [
     description: "Este microservicio forma parte integral de un sistema compuesto por microservicios y está diseñado para administrar la funcionalidad de chat dentro de la aplicación. Su principal responsabilidad es manejar los mensajes enviados por los usuarios utilizando una cola de mensajería (RabbitMQ), y se implementa mediante contenedores Docker. Actualmente, no está en ejecución debido a labores de mantención de la base de datos y cambios en las variables de entorno.",
     image:
       "https://i.im.ge/2024/04/07/WWnIF8.image.png",
-    tags: [{name:"Python", color:colors.python}, {name:"Django", color:colors.django},{ name:"MongoDB", color:colors.mongoDb}, { name:"Mongo Atlas", color:colors.mongoAtlas}, { name:"RabbitMQ", color:colors.rabbitMQ}],
+    tags: [{name:"Python", color:colors.python}, {name:"Django", color:colors.django},{ name:"MongoDB", color:colors.mongoDb}, { name:"Mongo Atlas", color:colors.mongoAtlas}, { name:"RabbitMQ", color:colors.rabbitMQ}, {name:"Docker", color:colors.docker}],
     category: "back",
     github: "https://github.com/bcolorado/tutoacademy_chat_ms/",
     member: [
@@ -255,7 +257,7 @@ export const projects = [
     description: "Este componente lógico es una parte esencial de un sistema basado en microservicios que se realizó de manera conjunta. Su función principal es orquestar y coordinar todas las solicitudes que llegan desde el cliente, así como gestionar los diferentes microservicios. Utiliza el lenguaje de consulta GraphQL para armar y enviar solicitudes conjuntas a estos microservicios. Además, se despliega en un contenedor Docker para facilitar su implementación y gestión.",
     image:
       "https://i.im.ge/2024/04/07/WKm93p.image.png",
-    tags: [{name:"JavaScript", color:colors.javascript}, {name:"ExpressJs", color:colors.express},{ name:"NodeJS", color:colors.nodeJs}, { name:"GraphQL", color:colors.graphQL}, { name:"RabbitMQ", color:colors.rabbitMQ}],
+    tags: [{name:"JavaScript", color:colors.javascript}, {name:"ExpressJs", color:colors.express},{ name:"NodeJS", color:colors.nodeJs}, { name:"GraphQL", color:colors.graphQL}, { name:"RabbitMQ", color:colors.rabbitMQ}, {name:"Docker", color:colors.docker}],
     category: "back",
     github: "https://github.com/bcolorado/tutoacademy_ag",
     member: arquiMembers,
@@ -274,15 +276,41 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Test cert",
-    date: "Jun 2023 - Jul 2023",
-    description: "This is a placeholder",
+    title: "Curso AWS Academy Cloud Architecting",
+    date: "Noviembre 2023 - Diciembre 2023",
+    description: "En el curso AWS Academy Cloud Architecting aprendí cómo utilizar de forma básica y eficaz Amazon WebServices (AWS) para crear infraestructuras de TI en la nube. Se cubren prácticas recomendadas, revisión de los 6 pilares del well architected framework, patrones de diseño y casos prácticos para optimizar soluciones basadas en la nube.",
     image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: [{name:"Docker", color:"#2395ec"}, {name:"AWS", color:"#e18905"},{ name:"JavaScript", color:"#f7df1e"}],
+      "https://i.im.ge/2024/04/08/WHWXuh.image.png",
+    tags: [, {name:"AWS", color:colors.aws},{ name:"Arquitectura software", color:colors.arquitectura}, {name:"Nube", color:colors.nube}],
     category: "cert",
-    github: "https://github.com/bcolorado",
-    webapp: "https://www.google.com/",
+    member: [
+      {
+        name: "Bryan Colorado",
+        img: Bio.githubPic,
+        linkedin: Bio.linkedin,
+        github: Bio.github,
+      },
+    ],
+    webapp: "https://drive.google.com/file/d/1ne2U5WS6mU6mSCOUvoI30qrEnEsI9C_p/view",
+  },
+  {
+    id: 5,
+    title: "Curso Cisco Cybersecurity Essentials",
+    date: "Agosto 2023 - Noviembre 2023",
+    description: "En este curso he adquirido comprensión en seguridad de redes, encriptación y leyes de ciberseguridad. Además, he sido introducido a tácticas utilizadas por ciberatacantes y en los principios seguidos por los defensores para proteger redes, incluyendo Confidencialidad, Integridad y Disponibilidad",
+    image:
+      "https://i.im.ge/2024/04/08/WHJw7h.image.png",
+    tags: [, {name:"Ciberseguridad", color:colors.typeScript},{ name:"Cisco", color:colors.nube},{name:"Integridad", color:colors.graphQL}, {name:"Confidencialidad", color:colors.nodeJs}, {name:"Disponibilidad", color:colors.javascript}],
+    category: "cert",
+    member: [
+      {
+        name: "Bryan Colorado",
+        img: Bio.githubPic,
+        linkedin: Bio.linkedin,
+        github: Bio.github,
+      },
+    ],
+    webapp: "https://drive.google.com/file/d/15NB1nzntq4MNHoMbJf7kOxvuMAynDpUH/view",
   },
 ];
 

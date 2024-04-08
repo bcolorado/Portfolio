@@ -1,6 +1,7 @@
 import React from 'react';
 import { GithubButton, MobileMenu, MobileMenuLink } from './NavbarStyles';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import {Bio} from '../../data/constants'
 
 export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
   return (
@@ -30,7 +31,7 @@ export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
           </MobileMenuLink>
           <GithubButton
             style={{ width: "max-content" }}
-            href="/"
+            href={Bio.github}
             target="_Blank"
           >
             <FaGithub size="1.5rem"/>
@@ -39,7 +40,7 @@ export const NavMobileMenu = ({ isOpen, setIsOpen }) => {
 
           <GithubButton
             style={{ width: "max-content" }}
-            href="/"
+            href={Bio.linkedin}
             target="_Blank"
           >
             <FaLinkedin size="1.5rem"/>

@@ -29,6 +29,7 @@ const Image = styled.img`
   background-color: ${darkTheme.white};
   border-radius: 10px;
   box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
+  object-fit: ${props => (props.type === "cert" ? "scale-down" : "cover")};
   loading: lazy;
 `;
 const Tags = styled.div`
@@ -110,7 +111,7 @@ const Button = styled.a`
 export const ProjectCard = ({ project, setOpenModal }) => {
   return (
     <Card onClick={() => setOpenModal({ state: true, project: project })}>
-      <Image src={project.image} />
+      <Image type={project.category} src={project.image} alt="project pic" loading="lazy" />
       <Tags>
         {project.tags?.map((tag, index) => (
           <Tag key={`projectCardTag-${index}`} color={tag.color}>{tag.name}</Tag>
@@ -123,7 +124,7 @@ export const ProjectCard = ({ project, setOpenModal }) => {
       </Details>
       <Members>
         {project.member?.map((member, index) => (
-          <Avatar key={`projectCardMember-${index}`} src={member.img} />
+          <Avatar key={`projectCardMember-${index}`} src={member.img} alt={`projectCardMember-${index}`} loading="lazy" />
         ))}
       </Members>
     </Card>
