@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { darkTheme } from "../../../utils/Themes";
 import { projects } from "../../../data/constants";
 import { ProjectCard } from "../../Cards/ProjectCard";
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../data/translations";
 
 const Container = styled.div`
 margin-top: 100px;
@@ -95,74 +97,86 @@ const CardContainer = styled.div`
 
 export const Projects = ({ openModal, setOpenModal }) => {
   const [toggle, setToggle] = useState("all");
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const getTranslatedProject = (project) => {
+    const translationKey = {
+      NoteCrafter: "notecrafter",
+      "Microservicio Chats": "chat_ms",
+      "Componente lógico Api Gateway": "api_gateway",
+      "Sistema basado en microservicios": "tuto_academy",
+      "Curso AWS Academy Cloud Architecting": "aws_course",
+      "Curso Cisco Cybersecurity Essentials": "cisco_course",
+    }[project.title];
+
+    if (!translationKey) return project;
+
+    const translatedProj = t.sections.projects.items[translationKey];
+    return {
+      ...project,
+      title: translatedProj.title,
+      date: translatedProj.date,
+      description: translatedProj.description,
+    };
+  };
 
   return (
     <Container id="Projects">
       <Wrapper>
-        <Title>Proyectos, insignias y certificados</Title>
-        <Desc>
-          He trabajado en varios proyectos. Desde el desarrollo de aplicaciones
-          web (Front/Back) hasta el diseño de bases de datos y arquitecturas de
-          software.
-        </Desc>
+        <Title>{t.sections.projects.title}</Title>
+        <Desc>{t.sections.projects.description}</Desc>
         <ToggleGroup>
           <ToggleButton
             active={toggle === "all"}
             onClick={() => setToggle("all")}
           >
-            Todos
+            {t.sections.projects.filters.all}
           </ToggleButton>
           <Divider />
           <ToggleButton
             active={toggle === "front"}
             onClick={() => setToggle("front")}
           >
-            FrontEnd
+            {t.sections.projects.filters.frontend}
           </ToggleButton>
           <Divider />
           <ToggleButton
             active={toggle === "back"}
             onClick={() => setToggle("back")}
           >
-            Backend
+            {t.sections.projects.filters.backend}
           </ToggleButton>
           <Divider />
           <ToggleButton
             active={toggle === "arch"}
             onClick={() => setToggle("arch")}
           >
-            Arquitectura
+            {t.sections.projects.filters.architecture}
           </ToggleButton>
           <Divider />
           <ToggleButton
             active={toggle === "cert"}
             onClick={() => setToggle("cert")}
           >
-            Certificados
+            {t.sections.projects.filters.certificates}
           </ToggleButton>
         </ToggleGroup>
         <CardContainer>
-          {toggle === "all" &&
-            projects.map((project, index) => (
-              <ProjectCard
-                key={`project-${index}`}
-                project={project}
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-              />
-            ))}
           {projects
-            .filter((item) => item.category === toggle)
-            .map((project, index) => (
+            .filter((item) => {
+              if (toggle === "all") return true;
+              return item.category === toggle;
+            })
+            .map((project) => (
               <ProjectCard
-                key={`project-${index}`}
-                project={project}
+                key={project.id}
+                project={getTranslatedProject(project)}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
               />
             ))}
         </CardContainer>
-        <Title color={'#e64c4c'}>Más proyectos pronto... 😶‍🌫️</Title>
       </Wrapper>
     </Container>
   );

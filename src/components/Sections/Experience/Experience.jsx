@@ -5,6 +5,8 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import ExperienceCard from "../../Cards/ExperienceCard";
 import { darkTheme } from "../../../utils/Themes";
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../data/translations";
 
 const Container = styled.div`
 margin-top: 100px;
@@ -51,23 +53,50 @@ const Desc = styled.div`
 `;
 
 export const Experience = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const getTranslatedExperience = (experience) => {
+    const translationKey = {
+      "Science for Life (S4L)": "s4l",
+      "LAB101 UNAL": "lab101",
+      Sitlen: "sitlen",
+      "Universidad Nacional de Colombia":
+        experience.role.includes("Arquitecto") ||
+        experience.role.includes("Architect")
+          ? "unal_architect"
+          : "unal_degree",
+    }[experience.company];
+
+    if (!translationKey) return experience;
+
+    const translatedExp = t.sections.experience.items[translationKey];
+    return {
+      ...experience,
+      role: translatedExp.role,
+      desc: translatedExp.desc,
+      date: translatedExp.date,
+      company: translatedExp.company,
+    };
+  };
+
   return (
     <Container id="Experience">
       <Wrapper>
-        <Title>Experiencia</Title>
+        <Title>{t.sections.experience.title}</Title>
         <Desc
           style={{
             marginBottom: "40px",
           }}
         >
-          Mi experiencia como desarrollador e ingeniero de Sistemas en diferentes puestos y proyectos:
+          {t.sections.experience.description}
         </Desc>
 
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
-              experience={experience}
+              experience={getTranslatedExperience(experience)}
             />
           ))}
         </VerticalTimeline>

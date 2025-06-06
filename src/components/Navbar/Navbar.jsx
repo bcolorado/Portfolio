@@ -1,14 +1,35 @@
 import React, { useState } from "react";
-import { Nav, NavContainer, NavLogo, MobileIcon, NavItems, NavLink, ButtonContainer, GithubButton, Span } from "./NavbarStyles" 
+import {
+  Nav,
+  NavContainer,
+  NavLogo,
+  MobileIcon,
+  NavItems,
+  NavLink,
+  ButtonContainer,
+  GithubButton,
+  Span,
+} from "./NavbarStyles";
 import { useTheme } from "styled-components";
-import { FaLessThan, FaGreaterThan, FaBars, FaGithub, FaLinkedin   } from "react-icons/fa";
+import {
+  FaLessThan,
+  FaGreaterThan,
+  FaBars,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 import { RxSlash } from "react-icons/rx";
 import { NavMobileMenu } from "./NavMobileMenu";
-import { Bio } from "../../data/constants";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <Nav>
       <NavContainer>
@@ -24,22 +45,23 @@ export const Navbar = () => {
         </MobileIcon>
 
         <NavItems>
-          <NavLink href="#about">Inicio</NavLink>
-          <NavLink href="#skills">Habilidades</NavLink>
-          <NavLink href="#Experience">Experiencia</NavLink>
-          <NavLink href="#Projects">Proyectos</NavLink>
-          <NavLink href="#Education">Educación</NavLink>
+          <NavLink href="#about">{t.nav.home}</NavLink>
+          <NavLink href="#skills">{t.nav.skills}</NavLink>
+          <NavLink href="#Experience">{t.nav.experience}</NavLink>
+          <NavLink href="#Projects">{t.nav.projects}</NavLink>
+          <NavLink href="#Education">{t.nav.education}</NavLink>
         </NavItems>
         <ButtonContainer>
+          <LanguageSwitcher />
           <GithubButton
-            href={Bio.github}
+            href={t.Bio.github}
             target={"_blank"}
             rel="noopener noreferrer"
           >
             <FaGithub size="1.5rem" />
           </GithubButton>
           <GithubButton
-            href={Bio.linkedin}
+            href={t.Bio.linkedin}
             target={"_blank"}
             rel="noopener noreferrer"
           >

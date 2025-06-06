@@ -6,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { darkTheme } from "../../utils/Themes";
 import { Avatar } from "@mui/material";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
-export const QuoteCard = ({ quote, author, source }) => {
+export const QuoteCard = () => {
+  const { language } = useLanguage();
+  const t = translations[language].quote;
+
   return (
     <Card
       sx={{
@@ -24,7 +29,13 @@ export const QuoteCard = ({ quote, author, source }) => {
     >
       <CardHeader
         avatar={
-          <Avatar  sx={{ bgcolor: 'rgba(17, 25, 40, 0.83)', position:'absolute', transform: "translate(0%, -100%)"}}>
+          <Avatar
+            sx={{
+              bgcolor: "rgba(17, 25, 40, 0.83)",
+              position: "absolute",
+              transform: "translate(0%, -100%)",
+            }}
+          >
             <FormatQuoteIcon />
           </Avatar>
         }
@@ -39,14 +50,14 @@ export const QuoteCard = ({ quote, author, source }) => {
           gutterBottom
           style={{ whiteSpace: "pre-line" }}
         >
-          {quote}
+          {t.text}
         </Typography>
         <Typography
           variant="subtitle2"
           fontSize={16}
           color={darkTheme.text_primary}
         >
-          — {author}, {source}
+          — {t.author}, {t.source}
         </Typography>
       </CardContent>
     </Card>

@@ -3,6 +3,8 @@ import { skills } from "../../../data/constants";
 import styled from "styled-components";
 import { darkTheme } from "../../../utils/Themes";
 import { Icon } from "./Icon";
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../data/translations";
 
 const Container = styled.div`
   margin-top: 100px;
@@ -119,25 +121,29 @@ const SkillItem = styled.div`
 `;
 
 export const Skills = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <Container id="skills">
       <Wrapper>
-        <Title>Habilidades</Title>
+        <Title>{t.sections.skills.title}</Title>
 
-        <Description>
-        Estas son algunas de las habilidades que he adquirido a 
-        lo largo de mi carrera profesional:
-        </Description>
+        <Description>{t.sections.skills.description}</Description>
 
         <SkillsContainer>
-          {skills.map((item) => (
-            <Skill key={item.title}>
-              <SkillTitle>{item.title}</SkillTitle>
+          {skills.map((skill, index) => (
+            <Skill key={`skill-${index}`}>
+              <SkillTitle>
+                {skill.title === "Frontend" && t.sections.skills.frontend}
+                {skill.title === "Backend" && t.sections.skills.backend}
+                {skill.title === "Otros" && t.sections.skills.others}
+              </SkillTitle>
               <SkillList>
-                {item.skills.map((skill) => (
-                  <SkillItem key={skill.id}>
-                    <Icon iconName={skill.id} />
-                    {skill.name}
+                {skill.skills.map((skillItem) => (
+                  <SkillItem key={skillItem.id}>
+                    <Icon iconName={skillItem.id} />
+                    {skillItem.name}
                   </SkillItem>
                 ))}
               </SkillList>

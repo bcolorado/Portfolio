@@ -5,6 +5,8 @@ import EducationCard from "../../Cards/EducationCard";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { darkTheme } from "../../../utils/Themes";
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../data/translations";
 
 const Container = styled.div`
 margin-top: 100px;
@@ -53,22 +55,43 @@ const Desc = styled.div`
 `;
 
 export const Education = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const getTranslatedEducation = (education) => {
+    const translationKey = {
+      "Universidad Nacional de Colombia, Bogotá": "unal",
+      "Servicio Nacional de Aprendizaje SENA, Soacha": "sena",
+      "Gimnasio Moderno Robinson Crusoe, Soacha": "school",
+    }[education.school];
+
+    if (!translationKey) return education;
+
+    const translatedEdu = t.sections.education.items[translationKey];
+    return {
+      ...education,
+      school: translatedEdu.school,
+      date: translatedEdu.date,
+      grade: translatedEdu.grade,
+      desc: translatedEdu.desc,
+      degree: translatedEdu.degree,
+    };
+  };
+
   return (
     <Container id="Education">
       <Wrapper>
-        <Title>Educación</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
-          Mi educación ha sido un viaje de autodescubrimiento y crecimiento.
-          Mis estudios importantes han sido los siguientes.
+        <Title>{t.sections.education.title}</Title>
+        <Desc style={{ marginBottom: "40px" }}>
+          {t.sections.education.description}
         </Desc>
 
         <VerticalTimeline>
           {education.map((education, index) => (
-            <EducationCard key={`education-${index}`} education={education} />
+            <EducationCard
+              key={`education-${index}`}
+              education={getTranslatedEducation(education)}
+            />
           ))}
         </VerticalTimeline>
       </Wrapper>

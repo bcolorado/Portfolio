@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { darkTheme } from "../../utils/Themes";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
 const Top = styled.div`
   width: 100%;
@@ -88,6 +90,18 @@ const ItemWrapper = styled.div`
 `;
 
 const ExperienceCard = ({ experience }) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const translateTechnology = (tech) => {
+    // Try to find a direct translation
+    if (t.technologies[tech]) {
+      return t.technologies[tech];
+    }
+    // If no translation found, return the original
+    return tech;
+  };
+
   return (
     <VerticalTimelineElement
       icon={
@@ -128,10 +142,12 @@ const ExperienceCard = ({ experience }) => {
           <>
             <br />
             <Skills>
-              <b>Tecnologias:</b>
+              <b>{t.sections.experience.technologies}:</b>
               <ItemWrapper>
                 {experience?.skills?.map((skill, index) => (
-                  <Skill key={`experience-${index}`}>• {skill}</Skill>
+                  <Skill key={`experience-${index}`}>
+                    • {translateTechnology(skill)}
+                  </Skill>
                 ))}
               </ItemWrapper>
             </Skills>

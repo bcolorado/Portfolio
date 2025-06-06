@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { darkTheme } from "../../utils/Themes";
 import { education } from "../../data/constants";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
 const Top = styled.div`
   width: 100%;
@@ -74,6 +76,9 @@ const Description = styled.div`
 const Span = styled.div``;
 
 const EducationCard = ({ education }) => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <VerticalTimelineElement
       icon={
@@ -110,7 +115,7 @@ const EducationCard = ({ education }) => {
         </Body>
       </Top>
       <Grade>
-        <b>Promedio :</b>
+        <b>{t.sections.education.grade}: </b>
         {education.grade}
       </Grade>
       <Description>

@@ -1,10 +1,11 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { darkTheme } from "../../../utils/Themes";
-import { Bio } from "../../../data/constants";
 import Typewriter from "typewriter-effect";
 import picture from "../../../assets/portfolioPic.webp";
 import "./btnStyles.css";
+import { useLanguage } from "../../../context/LanguageContext";
+import { translations } from "../../../data/translations";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const HeroContainer = styled.div`
   }
   z-index: 1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
-  `;
+`;
 
 const HeroBg = styled.div`
   opacity: 0.5;
@@ -188,36 +189,39 @@ const Img = styled.img`
 `;
 
 export const HeroSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <div id="about">
       <HeroContainer>
         <HeroInnerContainer>
           <HeroLeftContainer>
             <Title>
-              Mi nombre es
+              {t.sections.about.myNameIs}
               <br />
-              {Bio.name}
+              {t.Bio.name}
             </Title>
             <TextLoop>
-              Soy
+              {t.sections.about.iAm}
               <Span>
                 <Typewriter
                   options={{
-                    strings: Bio.roles,
+                    strings: t.Bio.roles,
                     autoStart: true,
                     loop: true,
                   }}
                 />
               </Span>
             </TextLoop>
-            <Subtitle>{Bio.description}</Subtitle>
+            <Subtitle>{t.Bio.description}</Subtitle>
             <a
               className="btn"
-              href={Bio.resume}
+              href={t.Bio.resume}
               target={"_blank"}
               rel="noopener noreferrer"
             >
-              Ver CV
+              {t.buttons.viewCV}
             </a>
           </HeroLeftContainer>
           <HeroRightContainer>

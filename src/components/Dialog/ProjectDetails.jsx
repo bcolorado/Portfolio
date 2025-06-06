@@ -1,8 +1,10 @@
-import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
-import { Modal } from '@mui/material';
-import React from 'react';
-import styled from 'styled-components';
-import { darkTheme } from '../../utils/Themes';
+import { CloseRounded, GitHub, LinkedIn } from "@mui/icons-material";
+import { Modal } from "@mui/material";
+import React from "react";
+import styled from "styled-components";
+import { darkTheme } from "../../utils/Themes";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
 const Container = styled.div`
   width: 100%;
@@ -65,7 +67,7 @@ const Desc = styled.div`
 `;
 
 const Image = styled.img`
-  width: ${(props) => (props?.type === 'cert' ? '340px' : '100%')};
+  width: ${(props) => (props?.type === "cert" ? "340px" : "100%")};
   align-self: center;
   border-radius: 12px;
   margin-top: 30px;
@@ -201,6 +203,8 @@ const StyledCloseBtn = styled.div`
 
 export const ProjectDetails = ({ openModal, setOpenModal }) => {
   const project = openModal?.project;
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const handleClose = () => {
     setOpenModal({ state: false, project: null });
@@ -220,10 +224,10 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
           <StyledCloseBtn>
             <CloseRounded
               style={{
-                position: 'absolute',
-                top: '10px',
-                right: '20px',
-                cursor: 'pointer',
+                position: "absolute",
+                top: "10px",
+                right: "20px",
+                cursor: "pointer",
               }}
               onClick={() => setOpenModal({ state: false, project: null })}
             />
@@ -241,49 +245,44 @@ export const ProjectDetails = ({ openModal, setOpenModal }) => {
           <Desc>{project?.description}</Desc>
           {project.member && (
             <>
-              <Label>Miembros</Label>
+              <Label>{t.sections.projects.labels.members}</Label>
               <Members>
                 {project?.member.map((member, index) => (
                   <Member key={`${member.name}-${index}`}>
                     <MemberImage src={member.img} />
                     <MemberName>{member.name}</MemberName>
-
-                    <StyledLink
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      href={member.github}
-                    >
-                      <GitHub />
-                    </StyledLink>
-
-                    <StyledLink
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      href={member.linkedin}
-                    >
-                      <LinkedIn />
-                    </StyledLink>
+                    <div style={{ display: "flex", gap: "8px" }}>
+                      <StyledLink
+                        href={member.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <GitHub />
+                      </StyledLink>
+                      <StyledLink
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LinkedIn />
+                      </StyledLink>
+                    </div>
                   </Member>
                 ))}
               </Members>
             </>
           )}
           <ButtonGroup>
-            {project?.category !== 'arch' && project?.category !== 'cert' && (
-              <Button dull href={project?.github} target='new'>
-                Ver código
+            {project?.webapp && (
+              <Button href={project?.webapp} target="_blank">
+                {project.category === "cert"
+                  ? t.buttons.viewCertificate
+                  : t.buttons.viewProject}
               </Button>
             )}
-
-            {project?.category !== 'back' && project?.category !== 'cert' && (
-              <Button href={project?.webapp} target='new'>
-                Ver proyecto
-              </Button>
-            )}
-
-            {project?.category === 'cert' && (
-              <Button href={project?.webapp} target='new'>
-                Ver Certificado
+            {project?.github && (
+              <Button href={project?.github} target="_blank" dull={true}>
+                {t.buttons.viewCode}
               </Button>
             )}
           </ButtonGroup>

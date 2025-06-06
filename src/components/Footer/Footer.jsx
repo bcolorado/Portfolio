@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Bio, quote } from "../../data/constants";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { darkTheme } from "../../utils/Themes";
 import { QuoteCard } from "../Cards/QuoteCard";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../data/translations";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -85,27 +86,29 @@ const Copyright = styled.p`
 `;
 
 export const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <FooterContainer>
-      <QuoteCard author={quote[0].author} quote={quote[0].quote} source={quote[0].source}/>
+      <QuoteCard />
       <FooterWrapper>
-        <Logo>Bryan Smith Colorado</Logo>
+        <Logo>{t.Bio.name}</Logo>
         <Nav>
-          <NavLink href="#about">Inicio</NavLink>
-          <NavLink href="#skills">Habilidades</NavLink>
-          <NavLink href="#Experience">Experiencia</NavLink>
-          <NavLink href="#Projects">Proyectos</NavLink>
-          <NavLink href="#Education">Educación</NavLink>
+          <NavLink href="#about">{t.nav.home}</NavLink>
+          <NavLink href="#skills">{t.nav.skills}</NavLink>
+          <NavLink href="#Experience">{t.nav.experience}</NavLink>
+          <NavLink href="#Projects">{t.nav.projects}</NavLink>
+          <NavLink href="#Education">{t.nav.education}</NavLink>
         </Nav>
         <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.linkedin} target="display">
+          <SocialMediaIcon href={t.Bio.linkedin} target="display">
             <LinkedInIcon />
           </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display">
-            <InstagramIcon />
-          </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 Bryan Smith. Todos los derechos reservados.</Copyright>
+        <Copyright>
+          &copy; 2024 {t.Bio.name}. {t.footer.rights}
+        </Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

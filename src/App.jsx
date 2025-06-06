@@ -13,6 +13,7 @@ import {
 import { BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import { ProjectDetails } from "./components/Dialog/ProjectDetails";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const Body = styled.div`
   background-color: ${darkTheme.bg};
@@ -31,27 +32,32 @@ const Wrapper = styled.div`
 function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Router>
-        <Navbar />
-        <Body>
-          <HeroSection />
-          <Wrapper>
-            <Skills />
-            <Experience />
-          </Wrapper>
-          <Wrapper>
-            <Projects openModal={openModal} setOpenModal={setOpenModal} />
-            <Education />
-          </Wrapper>
+    <LanguageProvider>
+      <ThemeProvider theme={darkTheme}>
+        <Router>
+          <Navbar />
+          <Body>
+            <HeroSection />
+            <Wrapper>
+              <Skills />
+              <Experience />
+            </Wrapper>
+            <Wrapper>
+              <Projects openModal={openModal} setOpenModal={setOpenModal} />
+              <Education />
+            </Wrapper>
 
-          <Footer />
-          {openModal.state && (
-            <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
-          )}
-        </Body>
-      </Router>
-    </ThemeProvider>
+            <Footer />
+            {openModal.state && (
+              <ProjectDetails
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            )}
+          </Body>
+        </Router>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 

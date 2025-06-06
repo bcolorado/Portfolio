@@ -4,21 +4,6 @@ import img3 from "../assets/ExperiencePic/unal.webp";
 import img4 from "../assets/ExperiencePic/logoSena.webp";
 import img5 from "../assets/ExperiencePic/bachiller.webp";
 import img6 from "../assets/ExperiencePic/s4l_scienceforlife_logo.webp";
-import { Javascript } from "@mui/icons-material";
-
-export const Bio = {
-  name: "Bryan Smith",
-  roles: ["Ingeniero de Sistemas", "Desarrollador de software"],
-  description:
-    "Mente motivada y versátil, siempre preparado para afrontar nuevos y grandes desafíos. Mi pasión por el aprendizaje me impulsa a ofrecer resultados de alta calidad en cada proyecto. Con una actitud positiva y una mentalidad de crecimiento, estoy listo para hacer una contribución significativa y alcanzar grandes logros.",
-  github: "https://github.com/bcolorado",
-  githubPic:
-    "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
-  resume:
-    "https://drive.google.com/file/d/1NDN0LA63Ki6nBVT6Hk2ae8FPpLit0pRA/view?usp=drive_link",
-  linkedin: "https://www.linkedin.com/in/smith-colorado/",
-  insta: "https://www.instagram.com/smithcol_/",
-};
 
 const colors = {
   react: "#1399c4",
@@ -153,10 +138,10 @@ export const experiences = [
       "Docker",
       "SQL",
       "Github",
-      "Typescript",
-      "Arquitectura software",
-      "Analisis requerimientos",
-      "Entre otros",
+      "TypeScript",
+      "Software Architecture",
+      "Requirements Analysis",
+      "Among others",
     ],
   },
   {
@@ -168,7 +153,6 @@ export const experiences = [
     desc: "Trabajando en el desarrollo de las interfaces gráficas de usuario para proyectos web usando React y Chakra.",
     skills: ["React", "Chakra", "HTML", "CSS", "JavaScript"],
   },
-
   {
     id: 2,
     img: img2,
@@ -185,7 +169,7 @@ export const experiences = [
     company: "Universidad Nacional de Colombia",
     date: "Febrero 2023 - Junio 2023",
     desc: "Estuve cumpliendo el rol de Arquitecto de software en un proyecto colaborativo para la materia arquitectura de software en la Universidad Nacional de Colombia.",
-    skills: ["GCP", "Arquitectura software", "Microservicios", "REST", "Nube"],
+    skills: ["GCP", "Software Architecture", "Microservices", "REST", "Cloud"],
   },
   {
     id: 4,
@@ -200,9 +184,9 @@ export const experiences = [
 const arquiMembers = [
   {
     name: "Bryan Colorado",
-    img: Bio.githubPic,
-    linkedin: Bio.linkedin,
-    github: Bio.github,
+    img: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
+    linkedin: "https://www.linkedin.com/in/smith-colorado/",
+    github: "https://github.com/bcolorado",
   },
   {
     name: "Miguel Puentes",
@@ -251,13 +235,12 @@ export const projects = [
     member: [
       {
         name: "Bryan Colorado",
-        img: Bio.githubPic,
-        linkedin: Bio.linkedin,
-        github: Bio.github,
+        img: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
+        linkedin: "https://www.linkedin.com/in/smith-colorado/",
+        github: "https://github.com/bcolorado",
       },
     ],
   },
-
   {
     id: 1,
     title: "Microservicio Chats",
@@ -278,9 +261,9 @@ export const projects = [
     member: [
       {
         name: "Bryan Colorado",
-        img: Bio.githubPic,
-        linkedin: Bio.linkedin,
-        github: Bio.github,
+        img: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
+        linkedin: "https://www.linkedin.com/in/smith-colorado/",
+        github: "https://github.com/bcolorado",
       },
     ],
   },
@@ -307,7 +290,8 @@ export const projects = [
     id: 3,
     title: "Sistema basado en microservicios",
     date: "Febrero 2023 - Junio 2023",
-    description: `Tuto Academy es un sistema de software web diseñado para simplificar el proceso de ofrecer y solicitar servicios de tutorías académicas. Esta plataforma permite a los usuarios crear perfiles para exhibir su experiencia académica y los servicios que ofrecen, así como buscar y contactar a otros usuarios que satisfagan sus necesidades de aprendizaje. Además, ofrece una herramienta integrada de programación de sesiones de tutorías con un calendario para coordinar reuniones en línea. La aplicación también incluye un sistema de calificaciones y valoraciones que permite a los usuarios consultar las opiniones de otros sobre el servicio ofrecido por cada tutor. Dada la escala del proyecto, se ha dividido en microservicios para facilitar el desarrollo y mantenimiento. Cada microservicio se encarga de aspectos específicos del sistema, como la gestión de usuarios, la programación de sesiones de tutorías, la gestión de mensajes y la orquestación de solicitudes. Por otra parte, para garantizar atributos de calidad como seguridad, alta disponibilidad, rendimiento e interoperabilidad, hemos implementado diversas estrategias arquitectónicas, como el uso de proxys inversos, balanceadores de cargar, replicamiento de bases de datos, escalamiento élastico en componentes críticos, autenticación mediante Google OAuth y el diseño de un entorno de despliegue en la nube (GCP). Aunque la aplicación ya no está disponible en producción debido a los costos asociados con su mantenimiento en la nube (GCP), contamos con un video demostrativo que ilustra su funcionamiento en una etapa específica del desarrollo y las diferentes vistas arquitectónicas desarrolladas a lo largo de todo el ciclo de vida del sistema.`,
+    description:
+      "Tuto Academy es un sistema de software web diseñado para simplificar el proceso de ofrecer y solicitar servicios de tutorías académicas. Esta plataforma permite a los usuarios crear perfiles para exhibir su experiencia académica y los servicios que ofrecen, así como buscar y contactar a otros usuarios que satisfagan sus necesidades de aprendizaje. Además, ofrece una herramienta integrada de programación de sesiones de tutorías con un calendario para coordinar reuniones en línea. La aplicación también incluye un sistema de calificaciones y valoraciones que permite a los usuarios consultar las opiniones de otros sobre el servicio ofrecido por cada tutor. Dada la escala del proyecto, se ha dividido en microservicios para facilitar el desarrollo y mantenimiento. Cada microservicio se encarga de aspectos específicos del sistema, como la gestión de usuarios, la programación de sesiones de tutorías, la gestión de mensajes y la orquestación de solicitudes. Por otra parte, para garantizar atributos de calidad como seguridad, alta disponibilidad, rendimiento e interoperabilidad, hemos implementado diversas estrategias arquitectónicas, como el uso de proxys inversos, balanceadores de cargar, replicamiento de bases de datos, escalamiento élastico en componentes críticos, autenticación mediante Google OAuth y el diseño de un entorno de despliegue en la nube (GCP). Aunque la aplicación ya no está disponible en producción debido a los costos asociados con su mantenimiento en la nube (GCP), contamos con un video demostrativo que ilustra su funcionamiento en una etapa específica del desarrollo y las diferentes vistas arquitectónicas desarrolladas a lo largo de todo el ciclo de vida del sistema.",
     image: "https://i.im.ge/2024/04/08/WkzMnT.image.png",
     tags: [
       { name: "Arquitectura software", color: colors.arquitectura },
@@ -330,7 +314,6 @@ export const projects = [
       "En el curso AWS Academy Cloud Architecting aprendí cómo utilizar de forma básica y eficaz Amazon WebServices (AWS) para crear infraestructuras de TI en la nube. Se cubren prácticas recomendadas, revisión de los 6 pilares del well architected framework, patrones de diseño y casos prácticos para optimizar soluciones basadas en la nube.",
     image: "https://i.im.ge/2024/04/08/WHWXuh.image.png",
     tags: [
-      ,
       { name: "AWS", color: colors.aws },
       { name: "Arquitectura software", color: colors.arquitectura },
       { name: "Nube", color: colors.nube },
@@ -339,9 +322,9 @@ export const projects = [
     member: [
       {
         name: "Bryan Colorado",
-        img: Bio.githubPic,
-        linkedin: Bio.linkedin,
-        github: Bio.github,
+        img: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
+        linkedin: "https://www.linkedin.com/in/smith-colorado/",
+        github: "https://github.com/bcolorado",
       },
     ],
     webapp:
@@ -355,7 +338,6 @@ export const projects = [
       "En este curso he adquirido comprensión en seguridad de redes, encriptación y leyes de ciberseguridad. Además, he sido introducido a tácticas utilizadas por ciberatacantes y en los principios seguidos por los defensores para proteger redes, incluyendo Confidencialidad, Integridad y Disponibilidad",
     image: "https://i.im.ge/2024/04/08/WHJw7h.image.png",
     tags: [
-      ,
       { name: "Ciberseguridad", color: colors.typeScript },
       { name: "Cisco", color: colors.nube },
       { name: "Integridad", color: colors.graphQL },
@@ -366,9 +348,9 @@ export const projects = [
     member: [
       {
         name: "Bryan Colorado",
-        img: Bio.githubPic,
-        linkedin: Bio.linkedin,
-        github: Bio.github,
+        img: "https://avatars.githubusercontent.com/u/82072673?s=400&u=279ceb80de20e50e1dbbd92cb9ae154bb39881d8&v=4",
+        linkedin: "https://www.linkedin.com/in/smith-colorado/",
+        github: "https://github.com/bcolorado",
       },
     ],
     webapp:
@@ -403,14 +385,5 @@ export const education = [
     grade: " N/A",
     desc: "Institución educativa en la que hice mi bachillerato y me gradué de once.",
     degree: "Colegio - Bachillerato",
-  },
-];
-
-export const quote = [
-  {
-    quote:
-      "«El paso más importante que puede dar alguien. No es el primero, ¿verdad?»\n\n«Es el próximo. Siempre el próximo paso»",
-    author: "Brandon Sanderson",
-    source: "Oathbringer",
   },
 ];
