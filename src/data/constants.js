@@ -4,6 +4,12 @@ import img3 from "../assets/ExperiencePic/unal.webp";
 import img4 from "../assets/ExperiencePic/logoSena.webp";
 import img5 from "../assets/ExperiencePic/bachiller.webp";
 import img6 from "../assets/ExperiencePic/s4l_scienceforlife_logo.webp";
+import img7 from "../assets/ExperiencePic/apigateway.webp";
+import img8 from "../assets/ExperiencePic/cisco_course.webp";
+import img9 from "../assets/ExperiencePic/cloud_architecting_course.webp";
+import img10 from "../assets/ExperiencePic/microservicio.webp";
+import img11 from "../assets/ExperiencePic/notecrafter.webp";
+import img12 from "../assets/ExperiencePic/tutoacademy.webp";
 
 const colors = {
   react: "#1399c4",
@@ -38,6 +44,10 @@ export const skills = [
         id: "react",
       },
       {
+        name: "Angular",
+        id: "angular",
+      },
+      {
         name: "HTML",
         id: "html",
       },
@@ -50,12 +60,12 @@ export const skills = [
         id: "javascript",
       },
       {
-        name: "MUI components",
-        id: "mui",
+        name: "TypeScript",
+        id: "typescript",
       },
       {
-        name: "Chakra UI",
-        id: "chakra",
+        name: "MUI components",
+        id: "mui",
       },
     ],
   },
@@ -222,7 +232,7 @@ export const projects = [
     date: "Marzo 2024",
     description:
       "Aplicación que permite tomar notas con soporte para Markdown, búsqueda y filtrado por categorías desarrollada con React y TypeScript. Es importante destacar que este proyecto marca mi incursión en el uso de TypeScript, lo que representa un hito significativo en mi desarrollo profesional. A través de este proyecto, he tenido la oportunidad de familiarizarme con las características y ventajas de TypeScript, fortaleciendo así mis habilidades como desarrollador y abriendo nuevas oportunidades para futuros proyectos y colaboraciones.",
-    image: "https://i.im.ge/2024/04/07/WWwAAf.image.png",
+    image: img11,
     tags: [
       { name: "React", color: colors.react },
       { name: "TypeScript", color: colors.typeScript },
@@ -247,7 +257,7 @@ export const projects = [
     date: "Marzo 2023",
     description:
       "Este microservicio forma parte integral de un sistema compuesto por microservicios y está diseñado para administrar la funcionalidad de chat dentro de la aplicación. Su principal responsabilidad es manejar los mensajes enviados por los usuarios utilizando una cola de mensajería (RabbitMQ), y se implementa mediante contenedores Docker. Actualmente, no está en ejecución debido a labores de mantención de la base de datos y cambios en las variables de entorno.",
-    image: "https://i.im.ge/2024/04/07/WWnIF8.image.png",
+    image: img10,
     tags: [
       { name: "Python", color: colors.python },
       { name: "Django", color: colors.django },
@@ -273,7 +283,7 @@ export const projects = [
     date: "Abril 2023 - Junio 2023",
     description:
       "Este componente lógico es una parte esencial de un sistema basado en microservicios que se realizó de manera conjunta. Su función principal es orquestar y coordinar todas las solicitudes que llegan desde el cliente, así como gestionar los diferentes microservicios. Utiliza el lenguaje de consulta GraphQL para armar y enviar solicitudes conjuntas a estos microservicios. Además, se despliega en un contenedor Docker para facilitar su implementación y gestión.",
-    image: "https://i.im.ge/2024/04/07/WKm93p.image.png",
+    image: img7,
     tags: [
       { name: "JavaScript", color: colors.javascript },
       { name: "ExpressJs", color: colors.express },
@@ -292,7 +302,7 @@ export const projects = [
     date: "Febrero 2023 - Junio 2023",
     description:
       "Tuto Academy es un sistema de software web diseñado para simplificar el proceso de ofrecer y solicitar servicios de tutorías académicas. Esta plataforma permite a los usuarios crear perfiles para exhibir su experiencia académica y los servicios que ofrecen, así como buscar y contactar a otros usuarios que satisfagan sus necesidades de aprendizaje. Además, ofrece una herramienta integrada de programación de sesiones de tutorías con un calendario para coordinar reuniones en línea. La aplicación también incluye un sistema de calificaciones y valoraciones que permite a los usuarios consultar las opiniones de otros sobre el servicio ofrecido por cada tutor. Dada la escala del proyecto, se ha dividido en microservicios para facilitar el desarrollo y mantenimiento. Cada microservicio se encarga de aspectos específicos del sistema, como la gestión de usuarios, la programación de sesiones de tutorías, la gestión de mensajes y la orquestación de solicitudes. Por otra parte, para garantizar atributos de calidad como seguridad, alta disponibilidad, rendimiento e interoperabilidad, hemos implementado diversas estrategias arquitectónicas, como el uso de proxys inversos, balanceadores de cargar, replicamiento de bases de datos, escalamiento élastico en componentes críticos, autenticación mediante Google OAuth y el diseño de un entorno de despliegue en la nube (GCP). Aunque la aplicación ya no está disponible en producción debido a los costos asociados con su mantenimiento en la nube (GCP), contamos con un video demostrativo que ilustra su funcionamiento en una etapa específica del desarrollo y las diferentes vistas arquitectónicas desarrolladas a lo largo de todo el ciclo de vida del sistema.",
-    image: "https://i.im.ge/2024/04/08/WkzMnT.image.png",
+    image: img12,
     tags: [
       { name: "Arquitectura software", color: colors.arquitectura },
       { name: "REST", color: colors.rest },
@@ -312,7 +322,7 @@ export const projects = [
     date: "Noviembre 2023 - Diciembre 2023",
     description:
       "En el curso AWS Academy Cloud Architecting aprendí cómo utilizar de forma básica y eficaz Amazon WebServices (AWS) para crear infraestructuras de TI en la nube. Se cubren prácticas recomendadas, revisión de los 6 pilares del well architected framework, patrones de diseño y casos prácticos para optimizar soluciones basadas en la nube.",
-    image: "https://i.im.ge/2024/04/08/WHWXuh.image.png",
+    image: img9,
     tags: [
       { name: "AWS", color: colors.aws },
       { name: "Arquitectura software", color: colors.arquitectura },
@@ -336,7 +346,7 @@ export const projects = [
     date: "Agosto 2023 - Noviembre 2023",
     description:
       "En este curso he adquirido comprensión en seguridad de redes, encriptación y leyes de ciberseguridad. Además, he sido introducido a tácticas utilizadas por ciberatacantes y en los principios seguidos por los defensores para proteger redes, incluyendo Confidencialidad, Integridad y Disponibilidad",
-    image: "https://i.im.ge/2024/04/08/WHJw7h.image.png",
+    image: img8,
     tags: [
       { name: "Ciberseguridad", color: colors.typeScript },
       { name: "Cisco", color: colors.nube },
